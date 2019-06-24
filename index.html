@@ -1,18 +1,96 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Little Fruits Childcare Centre</title>
-		<link rel="stylesheet" type="text/css" href="css/fruits.css">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans|Righteous" rel="stylesheet"> 	</head>
-	<body>
-		<div class="main">
-			<div class="middle">
-				<div class="inner">
-					<h1 class="mainTitle">Little Fruits Childcare Centre</h1>
-					<p class="underTitle">License Pending.</p>
-					<p class="underTitle">Coming soon to Port Coquitlam, BC.</p>		
-				</div>
-			</div>
-		</div>
-	</body>
+<head>
+    <title>yams fall apart</title>
+    <link rel="stylesheet" href="css/yams.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap" rel="stylesheet"> 
+
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/icon/favicon-16x16.png">
+    <link rel="manifest" href="img/icon/site.webmanifest">
+    <link rel="mask-icon" href="img/icon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <script type="text/javascript">
+        var yamCnt = 0;
+        var upgrade = 0.0;
+        var clicker = 1;
+
+        setInterval(timer, 1000);
+
+        function update() {
+            document.getElementById("counter").value = yamCnt;
+            document.title = yamCnt + " yams fall apart";
+            document.getElementById("amountUpgrade").innerHTML = "You own " + upgrade + " upgrades";
+            document.getElementById("upgradeCost").innerHTML = ((upgrade+1) * 15);
+        }
+
+        function timer() {
+            yamCnt += upgrade;
+            update();
+        }
+    </script>
+
+    <script type="text/javascript">
+        function addYams() {
+            yamCnt += 1;
+            update();
+        }
+    </script>
+</head>
+<body>
+    <div class="row">
+        
+    </div>
+    <a href=# onclick="addYams()"><img id="mainYam" src="img/yam.png"></a>
+    <br>
+    <p>you have <input type="text" id="counter" disabled> yams</p>
+    
+    <script type="text/javascript">
+        var input = document.querySelector('input');
+        input.addEventListener('input', resizeInput);
+        resizeInput.call(input);
+        function resizeInput() {
+            this.style.width = this.value.length + 1 + "ch";
+        }
+    </script>
+
+    <a href="#" onClick="save()">Save</a>
+    <a href="#" onClick="load()">Load</a>
+    <a href="#" onclick="buyUpgrade()">Activate Kola Nut</a>
+    <p id="upgradeCost"></p>
+    <p id="amountUpgrade">you own # upgrades</p>
+
+    <script type="text/javascript">
+        function save() {
+            localStorage.setItem("yamCnt", yamCnt);
+            localStorage.setItem("upgrade", upgrade);
+
+        }
+
+        function load() {
+            yamCnt = localStorage.getItem("yamCnt");
+            yamCnt = parseInt(yamCnt);
+            upgrade = localStorage.getItem("upgrade");
+            upgrade = parseInt(upgrade);
+        }
+
+        function buyUpgrade() {
+            if (yamCnt >= (upgrade+1) * 15) {
+                yamCnt -= ((upgrade+1) * 15);
+                upgrade += 1;
+                update();
+            }
+        }
+    </script>
+</body>
 </html>
+
+<!-- 
+yam farm
+many wives
+witch docta
+sacrificial sons
+-->

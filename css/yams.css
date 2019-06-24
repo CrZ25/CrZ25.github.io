@@ -1,0 +1,42 @@
+body {
+    /* font-family: 'Rubik Mono One', sans-serif;*/
+
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+#mainYam {
+    width: 16%;
+    margin: 10px;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    opacity: .9;
+    transition: 0.1s;
+}
+
+#mainYam:active {
+    transform: translateY(3px);
+}
+
+#mainYam:hover {
+    opacity: 1;
+}
+
+#counter {
+    -webkit-appearance:     @value;
+    -moz-appearance:        @value;
+    -ms-appearance:         @value;
+    -o-appearance:          @value;
+    appearance:             @value;
+    box-shadow: none !important;
+    outline: none;
+    border: 0;
+    text-align:center;
+    background-color: white;
+    color: black;
+
+
+    font-family: 'Montserrat', sans-serif;
+
+}
