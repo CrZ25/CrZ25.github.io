@@ -91,7 +91,7 @@ html, body {
 
 .header,
 .footer {
-    height: 50px;
+    padding: .33em;
     background: #666;
     color: #fff;
 }

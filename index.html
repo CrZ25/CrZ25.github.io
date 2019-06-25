@@ -14,7 +14,7 @@
     <meta name="theme-color" content="#ffffff">
     <script type="text/javascript">
     var yamCnt = 0;
-    var upgrade = 0.0;
+    var kolaNuts = 0.0;
     var clicker = 1;
     var cursorLvl = 0;
     var cursorTool = ["Digging Stick", ""];
@@ -23,18 +23,22 @@
 
     function update() {
         document.getElementById("counter").value = yamCnt;
-        document.title = numberWithCommas(yamCnt) + " yams fall apart";
+        //document.title = numberWithCommas(yamCnt) + " yams fall apart";
+        document.title = yamCnt.toFixed(2).toLocaleString() + " yams fall apart";
         kolaNut();
-        document.getElementById("yamcountry").innerHTML = numberWithCommas(yamCnt) + " yams";
+        //document.getElementById("yamcountry").innerHTML = numberWithCommas(yamCnt) + " yams";
+        document.getElementById("yamcountry").innerHTML = yamCnt.toFixed(2).toLocaleString() + " yams";
         document.getElementById("yamcountry2").innerHTML = nFormatter(yamCnt, 4) + " yams";
     }
 
     function kolaNut() {
-        document.getElementById("amountUpgrade").innerHTML = "you have " + numberWithCommas(upgrade) + " kola nuts";
-        document.getElementById("upgradeCost").innerHTML = '<img src="img/yam.png" style="width:1em"> ' + '<span style="color:#f1b545">' + nFormatter((15 + ((upgrade + 1) * 6)), 2) + '</span>';
+        document.getElementById("amountUpgrade").innerHTML = "you have " + numberWithCommas(kolaNuts) + " kola nuts";
+        document.getElementById("upgradeCost").innerHTML = '<img src="img/yam.png" style="width:1em"> ' + '<span style="color:#f1b545">' + nFormatter((15 + ((kolaNuts + 1) * 2)), 2) + '</span>';
+        document.getElementById("kolaPS").innerHTML = nFormatter(kolaNuts*.4, 2) + " yams/s";
     }
 
     function numberWithCommas(x) {
+        x.toFixed(2);
         var parts = x.toString().split(".");
         parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         return parts.join(".");
@@ -65,7 +69,7 @@
     }
 
     function timer() {
-        yamCnt += upgrade;
+        yamCnt += (kolaNuts*.4);
         update();
     }
 
@@ -76,30 +80,30 @@
 
     function save() {
         localStorage.setItem("yamCnt", yamCnt);
-        localStorage.setItem("upgrade", upgrade);
+        localStorage.setItem("kolaNuts", kolaNuts);
         localStorage.setItem("cursorLvl", cursorLvl);
     }
 
     function reset() {
         localStorage.setItem("yamCnt", 0);
-        localStorage.setItem("upgrade", 0);
+        localStorage.setItem("kolaNuts", 0);
         localStorage.setItem("cursorLvl", 0);
     }
 
     function load() {
         yamCnt = localStorage.getItem("yamCnt");
         yamCnt = parseInt(yamCnt);
-        upgrade = localStorage.getItem("upgrade");
-        upgrade = parseInt(upgrade);
+        kolaNuts = localStorage.getItem("kolaNuts");
+        kolaNuts = parseInt(kolaNuts);
         cursorLvl = localStorage.getItem("cursorLvl");
         cursorLvl = parseInt(cursorLvl);
     }
 
     function buyUpgrade(num) {
         // kolaNut
-        if (num == 1 && (yamCnt >= (15 + ((upgrade + 1) * 6)))) {
-            yamCnt -= (15 + ((upgrade + 1) * 6));
-            upgrade += 0.2;
+        if (num == 1 && (yamCnt >= (15 + ((kolaNuts + 1) * 2)))) {
+            yamCnt -= (15 + ((kolaNuts + 1) * 2));
+            kolaNuts += 1;
             update();
         }
     }
@@ -110,9 +114,14 @@
     
     <div class="wrapper">
         <header class="header">
-            <a id href="#" onClick="save()">Save</a>
-            <a href="#" onClick="load()">Load</a>
-            <a href="#" onClick="reset()">Reset</a>
+            Yams Fall Apart&trade; &reg;
+            <a href="https://github.com/CrZ25/">CrZ25</a>
+            , 2019
+            <div style="float:right;">
+                <a id href="#" onClick="save()">Save</a>
+                <a href="#" onClick="load()">Load</a>
+                <a href="#" onClick="reset()">Reset</a>
+            </div>
         </header>
         <section class="content">
             <div class="columns">
@@ -141,7 +150,7 @@
                     <p id="upgradeCost"></p>
                 </div>
                 <p id="amountUpgrade"></p>
-                <p id="perSecond"></p>
+                <p id="kolaPS"></p>
             </div>
             <div class="row" id="storeItem">
                 <a href="#" onclick="buyYamFarm()">Yam Farm</a>
