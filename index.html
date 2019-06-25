@@ -33,7 +33,7 @@
 
     function kolaNut() {
         document.getElementById("amountUpgrade").innerHTML = "you have " + numberWithCommas(kolaNuts) + " kola nuts";
-        document.getElementById("upgradeCost").innerHTML = '<img src="img/yam.png" style="width:1em"> ' + '<span style="color:#f1b545">' + nFormatter((15 + ((kolaNuts + 1) * 2)), 2) + '</span>';
+        document.getElementById("upgradeCost").innerHTML = '<span style="color:#f1b545">' + nFormatter((15 + ((kolaNuts + 1) * 2)), 2) + '</span>';
         document.getElementById("kolaPS").innerHTML = nFormatter(kolaNuts*.4, 2) + " yams/s";
     }
 
@@ -147,7 +147,8 @@
                 <aside class="sidebar-second"><div class="row" id="storeItem">
                 <a href="#" onclick="buyUpgrade(1)">Kola Nut</a>
                 <div id="price">
-                    <p id="upgradeCost"></p>
+                    <img src="img/yam.png" style="width:.8em"> 
+                    <span id="upgradeCost"></span>
                 </div>
                 <p id="amountUpgrade"></p>
                 <p id="kolaPS"></p>
