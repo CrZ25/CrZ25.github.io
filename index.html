@@ -24,16 +24,14 @@
     function update() {
         document.getElementById("counter").value = yamCnt;
         document.title = numberWithCommas(yamCnt) + " yams fall apart";
-        document.getElementById("amountUpgrade").innerHTML = "you have " + numberWithCommas(upgrade) + " kola nuts";
-        document.getElementById("upgradeCost").innerHTML = '<img src="img/yam.png" style="width:1em">' + '<span style="color:#f1b545">' + numberWithCommas(15 + ((upgrade + 1) * 6)) + '</span>';
+        kolaNut();
         document.getElementById("yamcountry").innerHTML = numberWithCommas(yamCnt) + " yams";
-        document.getElementById("yamcountry2").innerHTML = nFormatter(yamCnt) + " yams";
-
-        resizeInput();
+        document.getElementById("yamcountry2").innerHTML = nFormatter(yamCnt, 4) + " yams";
     }
 
-    function resizeInput() {
-        this.style.width = this.value.length + 1 + "ch";
+    function kolaNut() {
+        document.getElementById("amountUpgrade").innerHTML = "you have " + numberWithCommas(upgrade) + " kola nuts";
+        document.getElementById("upgradeCost").innerHTML = '<img src="img/yam.png" style="width:1em"> ' + '<span style="color:#f1b545">' + nFormatter((15 + ((upgrade + 1) * 6)), 2) + '</span>';
     }
 
     function numberWithCommas(x) {
@@ -42,10 +40,10 @@
         return parts.join(".");
     }
 
-    function nFormatter(num) {
+    function nFormatter(num, digits) {
         var si = [
             { value: 1, symbol: "" },
-            { value: 1E3, symbol: " k" },
+            { value: 1E3, symbol: "k" },
             { value: 1E6, symbol: " million" },
             { value: 1E9, symbol: " billion" },
             { value: 1E12, symbol: " trillion" },
@@ -56,7 +54,6 @@
             { value: 1E27, symbol: " octillion" },
             { value: 1E30, symbol: " nontillion" }
         ];
-        var digits = 2;
         var rx = /\.0+$|(\.[0-9]*[1-9])0+$/;
         var i;
         for (i = si.length - 1; i > 0; i--) {
@@ -98,10 +95,11 @@
         cursorLvl = parseInt(cursorLvl);
     }
 
-    function buyUpgrade() {
-        if (yamCnt >= (15 + ((upgrade + 1) * 6))) {
+    function buyUpgrade(num) {
+        // kolaNut
+        if (num == 1 && (yamCnt >= (15 + ((upgrade + 1) * 6)))) {
             yamCnt -= (15 + ((upgrade + 1) * 6));
-            upgrade += 1;
+            upgrade += 0.2;
             update();
         }
     }
@@ -109,51 +107,54 @@
 </head>
 
 <body>
-    <div class="row">
-        <div class="column" style="background-color:#aaa;">
-            <div class="row">
-                <a href=# onclick="addYams()"><img id="mainYam" src="img/yam.png"></a>
-            </div>
-            <div class="row">
-                <input id="counter" disabled type="hidden">
-                <div id="counterOuter">
-                    <div id="siFormat">
-                        <p id="yamcountry2">You're in yam country now, BROTHER.</p>
-                        <div id="decFormat">
-                            <p id="yamcountry">You're in yam country now, BROTHER.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <script type="text/javascript">
-                load();
-                var input = document.querySelector('input');
-                input.addEventListener('input', resizeInput);
-                resizeInput.call(input);
-                </script>
-            </div>
-        </div>
-        <div class="column" style="background-color:#bbb;">
-            <a href="#" onClick="save()">Save</a>
+    
+    <div class="wrapper">
+        <header class="header">
+            <a id href="#" onClick="save()">Save</a>
             <a href="#" onClick="load()">Load</a>
             <a href="#" onClick="reset()">Reset</a>
-        </div>
-        <div class="column" style="background-color:#ccc;">
-            <div class="row">
-                <div class="column" style="background-color:#aaa;">
-                    Digging Stick
+        </header>
+        <section class="content">
+            <div class="columns">
+                <main class="main">
+                    <a href=# onclick="addYams()"><img id="mainYam" src="img/yam.png"></a>
+                    <input id="counter" disabled type="hidden">
+                    <div id="counterOuter">
+                        <div id="siFormat">
+                            <p id="yamcountry2">You're in yam country now, BROTHER.</p>
+                            <div id="decFormat">
+                                <p id="yamcountry">You're in yam country now, BROTHER.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+                        load();
+                        var input = document.querySelector('input');
+                        input.addEventListener('input', resizeInput);
+                        resizeInput.call(input);
+                    </script>
+                </main>
+                <aside class="sidebar-first"># of kola nuts/farms/etc</aside>
+                <aside class="sidebar-second"><div class="row" id="storeItem">
+                <a href="#" onclick="buyUpgrade(1)">Kola Nut</a>
+                <div id="price">
+                    <p id="upgradeCost"></p>
                 </div>
-                <div class="column" style="background-color:#bbb;">
-                    clicker 2
-                </div>
-                <div class="column" style="background-color:#ccc;">
-                    clicker 3
-                </div>
+                <p id="amountUpgrade"></p>
+                <p id="perSecond"></p>
             </div>
-            <a href="#" onclick="buyUpgrade()">Activate Kola Nut</a>
-            <p id="upgradeCost"></p>
-            <p id="amountUpgrade">you own # upgrades</p>
-        </div>
+            <div class="row" id="storeItem">
+                <a href="#" onclick="buyYamFarm()">Yam Farm</a>
+                <p id="upgradeCost"></p>
+                <p id="amountUpgrade"></p>
+            </div>
+            <div class="row" id="storeItem">
+                <a href="#" onclick="buyWives()">Wives</a>
+                <p id="upgradeCost"></p>
+                <p id="amountUpgrade"></p>
+            </div></aside>
+            </div>
+        </section>
     </div>
 </body>
 
