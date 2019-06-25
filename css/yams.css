@@ -8,14 +8,36 @@ body {
 #mainYam {
     width: 50%;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 1em auto 1em auto;
     width: 50%;
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
     opacity: .9;
     transition: 0.1s;
+}
+
+#counterOuter {
+    height: 100px;
+    margin: 1em auto 1em auto;
+    overflow: hidden;
+}
+
+#siFormat, #decFormat {
+    height: 100px;
+    margin: 0;
+    text-align: center;
+    line-height: 100px;
+}
+
+#siFormat {
+}
+
+#siFormat:hover {
+    margin-top: -100px;
+}
+
+#decFormat {
 }
 
 #mainYam:active {
@@ -25,6 +47,11 @@ body {
 #mainYam:hover {
     opacity: 1;
     transition: 0.1s;
+}
+
+#yamcountry, #yamcountry2 {
+    text-align: center;
+    margin: 0;
 }
 
 #counter {
@@ -39,10 +66,7 @@ body {
     text-align: center;
     background-color: transparent;
     color: black;
-
-
     font-family: 'Montserrat', sans-serif;
-
 }
 
 * {

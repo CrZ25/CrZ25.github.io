@@ -12,20 +12,22 @@
     <link rel="mask-icon" href="img/icon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-
     <script type="text/javascript">
     var yamCnt = 0;
     var upgrade = 0.0;
     var clicker = 1;
+    var cursorLvl = 0;
+    var cursorTool = ["Digging Stick", ""];
 
     setInterval(timer, 1000);
 
     function update() {
         document.getElementById("counter").value = yamCnt;
         document.title = numberWithCommas(yamCnt) + " yams fall apart";
-        document.getElementById("amountUpgrade").innerHTML = "you have " + upgrade + " kola nuts";
-        document.getElementById("upgradeCost").innerHTML = (15 + ((upgrade + 1) * 3));
+        document.getElementById("amountUpgrade").innerHTML = "you have " + numberWithCommas(upgrade) + " kola nuts";
+        document.getElementById("upgradeCost").innerHTML = "$" + (15 + ((upgrade + 1) * 6));
         document.getElementById("yamcountry").innerHTML = numberWithCommas(yamCnt) + " yams";
+        document.getElementById("yamcountry2").innerHTML = nFormatter(yamCnt) + " yams";
 
         resizeInput();
     }
@@ -40,6 +42,31 @@
         return parts.join(".");
     }
 
+    function nFormatter(num) {
+        var si = [
+            { value: 1, symbol: "" },
+            { value: 1E3, symbol: " k" },
+            { value: 1E6, symbol: " million" },
+            { value: 1E9, symbol: " billion" },
+            { value: 1E12, symbol: " trillion" },
+            { value: 1E15, symbol: " quadrillion" },
+            { value: 1E18, symbol: " quintillion" },
+            { value: 1E21, symbol: " sextillion" },
+            { value: 1E24, symbol: " septillion" },
+            { value: 1E27, symbol: " octillion" },
+            { value: 1E30, symbol: " nontillion" }
+        ];
+        var digits = 2;
+        var rx = /\.0+$|(\.[0-9]*[1-9])0+$/;
+        var i;
+        for (i = si.length - 1; i > 0; i--) {
+            if (num >= si[i].value) {
+                break;
+            }
+        }
+        return (num / si[i].value).toFixed(digits).replace(rx, "$1") + si[i].symbol;
+    }
+
     function timer() {
         yamCnt += upgrade;
         update();
@@ -48,6 +75,33 @@
     function addYams() {
         yamCnt += 1;
         update();
+    }
+
+    function save() {
+        localStorage.setItem("yamCnt", yamCnt);
+        localStorage.setItem("upgrade", upgrade);
+        localStorage.setItem("cursorLvl", cursorLvl);
+    }
+
+    function reset() {
+        localStorage.clear();
+    }
+
+    function load() {
+        yamCnt = localStorage.getItem("yamCnt");
+        yamCnt = parseInt(yamCnt);
+        upgrade = localStorage.getItem("upgrade");
+        upgrade = parseInt(upgrade);
+        cursorLvl = localStorage.getItem("cursorLvl");
+        cursorLvl = parseInt(cursorLvl);
+    }
+
+    function buyUpgrade() {
+        if (yamCnt >= (15 + ((upgrade + 1) * 6))) {
+            yamCnt -= (15 + ((upgrade + 1) * 6));
+            upgrade += 1;
+            update();
+        }
     }
     </script>
 </head>
@@ -60,8 +114,17 @@
             </div>
             <div class="row">
                 <input id="counter" disabled type="hidden">
-                <p id="yamcountry">You're in yam country now, BROTHER.</p>
+                <div id="counterOuter">
+                    <div id="siFormat">
+                        <p id="yamcountry2">You're in yam country now, BROTHER.</p>
+                        <div id="decFormat">
+                            <p id="yamcountry">You're in yam country now, BROTHER.</p>
+                        </div>
+                    </div>
+                </div>
+                
                 <script type="text/javascript">
+                load();
                 var input = document.querySelector('input');
                 input.addEventListener('input', resizeInput);
                 resizeInput.call(input);
@@ -71,11 +134,12 @@
         <div class="column" style="background-color:#bbb;">
             <a href="#" onClick="save()">Save</a>
             <a href="#" onClick="load()">Load</a>
+            <a href="#" onClick="reset()">Reset</a>
         </div>
         <div class="column" style="background-color:#ccc;">
             <div class="row">
                 <div class="column" style="background-color:#aaa;">
-                    cultivating knife
+                    Digging Stick
                 </div>
                 <div class="column" style="background-color:#bbb;">
                     clicker 2
@@ -89,27 +153,6 @@
             <p id="amountUpgrade">you own # upgrades</p>
         </div>
     </div>
-    <script type="text/javascript">
-    function save() {
-        localStorage.setItem("yamCnt", yamCnt);
-        localStorage.setItem("upgrade", upgrade);
-    }
-
-    function load() {
-        yamCnt = localStorage.getItem("yamCnt");
-        yamCnt = parseInt(yamCnt);
-        upgrade = localStorage.getItem("upgrade");
-        upgrade = parseInt(upgrade);
-    }
-
-    function buyUpgrade() {
-        if (yamCnt >= (15 + ((upgrade + 1) * 3))) {
-            yamCnt -= (15 + ((upgrade + 1) * 3));
-            upgrade += 1;
-            update();
-        }
-    }
-    </script>
 </body>
 
 </html>
@@ -119,4 +162,6 @@
 3 child soldiers 
 4 witch docta
 5 sacrificial sons
+
+frenzy : 
 -->
