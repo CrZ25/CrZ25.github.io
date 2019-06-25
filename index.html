@@ -25,7 +25,7 @@
         document.getElementById("counter").value = yamCnt;
         document.title = numberWithCommas(yamCnt) + " yams fall apart";
         document.getElementById("amountUpgrade").innerHTML = "you have " + numberWithCommas(upgrade) + " kola nuts";
-        document.getElementById("upgradeCost").innerHTML = "$" + (15 + ((upgrade + 1) * 6));
+        document.getElementById("upgradeCost").innerHTML = '<img src="img/yam.png" style="width:1em">' + '<span style="color:#f1b545">' + numberWithCommas(15 + ((upgrade + 1) * 6)) + '</span>';
         document.getElementById("yamcountry").innerHTML = numberWithCommas(yamCnt) + " yams";
         document.getElementById("yamcountry2").innerHTML = nFormatter(yamCnt) + " yams";
 
@@ -84,7 +84,9 @@
     }
 
     function reset() {
-        localStorage.clear();
+        localStorage.setItem("yamCnt", 0);
+        localStorage.setItem("upgrade", 0);
+        localStorage.setItem("cursorLvl", 0);
     }
 
     function load() {
