@@ -24,22 +24,21 @@
     function update() {
         document.getElementById("counter").value = yamCnt;
         //document.title = numberWithCommas(yamCnt) + " yams fall apart";
-        document.title = yamCnt.toFixed(2).toLocaleString() + " yams fall apart";
+        document.title = nFormatter(yamCnt, 3) + " yams fall apart";
         kolaNut();
         //document.getElementById("yamcountry").innerHTML = numberWithCommas(yamCnt) + " yams";
-        document.getElementById("yamcountry").innerHTML = yamCnt.toFixed(2).toLocaleString() + " yams";
-        document.getElementById("yamcountry2").innerHTML = nFormatter(yamCnt, 4) + " yams";
+        document.getElementById("yamcountry").innerHTML = numberWithCommas(yamCnt) + " yams";
+        document.getElementById("yamcountry2").innerHTML = nFormatter(yamCnt, 3) + " yams";
     }
 
     function kolaNut() {
         document.getElementById("amountUpgrade").innerHTML = "you have " + numberWithCommas(kolaNuts) + " kola nuts";
-        document.getElementById("upgradeCost").innerHTML = '<span style="color:#f1b545">' + nFormatter((15 + ((kolaNuts + 1) * 2)), 2) + '</span>';
-        document.getElementById("kolaPS").innerHTML = nFormatter(kolaNuts*.4, 2) + " yams/s";
+        document.getElementById("kolaCost").innerHTML = '<span style="color:#f1b545">' + nFormatter((15 + ((kolaNuts + 1) * 2)), 3) + '</span>';
+        document.getElementById("kolaPS").innerHTML = nFormatter(kolaNuts * .4, 1) + " yams/s";
     }
 
     function numberWithCommas(x) {
-        x.toFixed(2);
-        var parts = x.toString().split(".");
+        var parts = x.toFixed(1).toString().split(".");
         parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         return parts.join(".");
     }
@@ -69,7 +68,7 @@
     }
 
     function timer() {
-        yamCnt += (kolaNuts*.4);
+        yamCnt += (kolaNuts * .4);
         update();
     }
 
@@ -111,7 +110,6 @@
 </head>
 
 <body>
-    
     <div class="wrapper">
         <header class="header">
             Yams Fall Apart&trade; &reg;
@@ -126,7 +124,7 @@
         <section class="content">
             <div class="columns">
                 <main class="main">
-                    <a href=# onclick="addYams()"><img id="mainYam" src="img/yam.png"></a>
+                    <a href=# onclick="addYams()"><img id="mainYam" src="img/yam.png" draggable="false"></a>
                     <input id="counter" disabled type="hidden">
                     <div id="counterOuter">
                         <div id="siFormat">
@@ -137,32 +135,37 @@
                         </div>
                     </div>
                     <script type="text/javascript">
-                        load();
-                        var input = document.querySelector('input');
-                        input.addEventListener('input', resizeInput);
-                        resizeInput.call(input);
+                    load();
+                    var input = document.querySelector('input');
+                    input.addEventListener('input', resizeInput);
+                    resizeInput.call(input);
                     </script>
                 </main>
                 <aside class="sidebar-first"># of kola nuts/farms/etc</aside>
-                <aside class="sidebar-second"><div class="row" id="storeItem">
-                <a href="#" onclick="buyUpgrade(1)">Kola Nut</a>
-                <div id="price">
-                    <img src="img/yam.png" style="width:.8em"> 
-                    <span id="upgradeCost"></span>
-                </div>
-                <p id="amountUpgrade"></p>
-                <p id="kolaPS"></p>
-            </div>
-            <div class="row" id="storeItem">
-                <a href="#" onclick="buyYamFarm()">Yam Farm</a>
-                <p id="upgradeCost"></p>
-                <p id="amountUpgrade"></p>
-            </div>
-            <div class="row" id="storeItem">
-                <a href="#" onclick="buyWives()">Wives</a>
-                <p id="upgradeCost"></p>
-                <p id="amountUpgrade"></p>
-            </div></aside>
+                <aside class="sidebar-second">
+                    <main class="main">1</main>
+                    <aside class="sidebar-first">2</aside>
+                    <aside class="sidebar-second">3</aside>
+                    <div class="row" id="storeItem">
+                        <a href="#" onclick="buyUpgrade(1)">Kola Nut</a>
+                        <div id="price">
+                            <img src="img/yam.png" style="width:.8em">
+                            <span id="kolaCost"></span>
+                        </div>
+                        <p id="amountUpgrade"></p>
+                        <p id="kolaPS"></p>
+                    </div>
+                    <div class="row" id="storeItem">
+                        <a href="#" onclick="buyUpgrade(2)">Yam Farm</a>
+                        <p id="farmCost"></p>
+                        <p id="farmUpgrade"></p>
+                    </div>
+                    <div class="row" id="storeItem">
+                        <a href="#" onclick="buyWives(3)">Wives</a>
+                        <p id="upgradeCost"></p>
+                        <p id="amountUpgrade"></p>
+                    </div>
+                </aside>
             </div>
         </section>
     </div>
