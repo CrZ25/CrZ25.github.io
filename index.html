@@ -3,6 +3,7 @@
 
 <head>
     <title>yams fall apart</title>
+    <meta charset="utf-8"/>
     <link rel="stylesheet" href="css/yams.css" />
     <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="img/icon/apple-touch-icon.png">
@@ -14,27 +15,36 @@
     <meta name="theme-color" content="#ffffff">
     <script type="text/javascript">
     var yamCnt = 0;
-    var kolaNuts = 0.0;
+    var kolaNuts = 0;
+    var yamFarm = 0;
     var clicker = 1;
     var cursorLvl = 0;
     var cursorTool = ["Digging Stick", ""];
+    var kolaNutPerk = ["Super Nut", "TUNA SUB", "Nut Free Zone", "Nut Button"]
 
-    setInterval(timer, 1000);
+    setInterval(timer, 50);
 
     function update() {
         document.getElementById("counter").value = yamCnt;
         //document.title = numberWithCommas(yamCnt) + " yams fall apart";
         document.title = nFormatter(yamCnt, 3) + " yams fall apart";
         kolaNut();
+        yamFarmFn();
         //document.getElementById("yamcountry").innerHTML = numberWithCommas(yamCnt) + " yams";
         document.getElementById("yamcountry").innerHTML = numberWithCommas(yamCnt) + " yams";
-        document.getElementById("yamcountry2").innerHTML = nFormatter(yamCnt, 3) + " yams";
+        document.getElementById("yamcountry2").innerHTML = nFormatter(yamCnt, 4) + " yams";
     }
 
     function kolaNut() {
         document.getElementById("amountUpgrade").innerHTML = "you have " + numberWithCommas(kolaNuts) + " kola nuts";
         document.getElementById("kolaCost").innerHTML = '<span style="color:#f1b545">' + nFormatter((15 + ((kolaNuts + 1) * 2)), 3) + '</span>';
         document.getElementById("kolaPS").innerHTML = nFormatter(kolaNuts * .4, 1) + " yams/s";
+    }
+
+    function yamFarmFn() {
+        document.getElementById("amtYamFarm").innerHTML = "you have " + numberWithCommas(yamFarm) + " Yam Farms";
+        document.getElementById("yamCost").innerHTML = '<span style="color:#f1b545">' + nFormatter((15 + (600 + ((yamFarm + 1) * 12))),3) + '</span>';
+        document.getElementById("yamFarmPS").innerHTML = nFormatter(yamFarm * 1.2, 1) + " yams/s";
     }
 
     function numberWithCommas(x) {
@@ -68,7 +78,8 @@
     }
 
     function timer() {
-        yamCnt += (kolaNuts * .4);
+        yamCnt += (kolaNuts * .4) * .05;
+        yamCnt += (yamFarm * 1.2) * .05;
         update();
     }
 
@@ -81,12 +92,14 @@
         localStorage.setItem("yamCnt", yamCnt);
         localStorage.setItem("kolaNuts", kolaNuts);
         localStorage.setItem("cursorLvl", cursorLvl);
+        localStorage.setItem("yamFarm", yamFarm);
     }
 
     function reset() {
         localStorage.setItem("yamCnt", 0);
         localStorage.setItem("kolaNuts", 0);
         localStorage.setItem("cursorLvl", 0);
+        localStorage.setItem("yamFarm", 0);
     }
 
     function load() {
@@ -94,6 +107,8 @@
         yamCnt = parseInt(yamCnt);
         kolaNuts = localStorage.getItem("kolaNuts");
         kolaNuts = parseInt(kolaNuts);
+        yamFarm = localStorage.getItem("yamFarm");
+        yamFarm = parseInt(yamFarm);
         cursorLvl = localStorage.getItem("cursorLvl");
         cursorLvl = parseInt(cursorLvl);
     }
@@ -103,6 +118,11 @@
         if (num == 1 && (yamCnt >= (15 + ((kolaNuts + 1) * 2)))) {
             yamCnt -= (15 + ((kolaNuts + 1) * 2));
             kolaNuts += 1;
+            update();
+        } 
+        else if (num == 2 && (yamCnt >= (600 + ((yamFarm + 1) * 12)))) {
+            yamCnt -= (600 + ((yamFarm + 1) * 12));
+            yamFarm += 1;
             update();
         }
     }
@@ -135,10 +155,8 @@
                         </div>
                     </div>
                     <script type="text/javascript">
-                    load();
                     var input = document.querySelector('input');
                     input.addEventListener('input', resizeInput);
-                    resizeInput.call(input);
                     </script>
                 </main>
                 <aside class="sidebar-first"># of kola nuts/farms/etc</aside>
@@ -157,8 +175,12 @@
                     </div>
                     <div class="row" id="storeItem">
                         <a href="#" onclick="buyUpgrade(2)">Yam Farm</a>
-                        <p id="farmCost"></p>
-                        <p id="farmUpgrade"></p>
+                        <div id="price">
+                            <img src="img/yam.png" style="width:.8em">
+                            <span id="yamCost"></span>
+                        </div>
+                        <p id="amtYamFarm"></p>
+                        <p id="yamFarmPS"></p>
                     </div>
                     <div class="row" id="storeItem">
                         <a href="#" onclick="buyWives(3)">Wives</a>
@@ -170,6 +192,8 @@
         </section>
     </div>
 </body>
+
+
 
 </html>
 <!-- 
