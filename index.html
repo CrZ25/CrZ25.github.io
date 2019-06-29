@@ -3,7 +3,7 @@
 
 <head>
     <title>yams fall apart</title>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <link rel="stylesheet" href="css/yams.css" />
     <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="img/icon/apple-touch-icon.png">
@@ -19,6 +19,7 @@
     var yamFarm = 0;
     var clicker = 1;
     var cursorLvl = 0;
+    var totalCPS = 0;
     var cursorTool = ["Digging Stick", ""];
     var kolaNutPerk = ["Super Nut", "TUNA SUB", "Nut Free Zone", "Nut Button"]
 
@@ -33,18 +34,19 @@
         //document.getElementById("yamcountry").innerHTML = numberWithCommas(yamCnt) + " yams";
         document.getElementById("yamcountry").innerHTML = numberWithCommas(yamCnt) + " yams";
         document.getElementById("yamcountry2").innerHTML = nFormatter(yamCnt, 4) + " yams";
+        document.getElementById("cps").innerHTML = numberWithCommas(totalCPS) + " yams/s";
     }
 
     function kolaNut() {
         document.getElementById("amountUpgrade").innerHTML = "you have " + numberWithCommas(kolaNuts) + " kola nuts";
         document.getElementById("kolaCost").innerHTML = '<span style="color:#f1b545">' + nFormatter((15 + ((kolaNuts + 1) * 2)), 3) + '</span>';
-        document.getElementById("kolaPS").innerHTML = nFormatter(kolaNuts * .4, 1) + " yams/s";
+        document.getElementById("kolaPS").innerHTML = nFormatter(kolaNuts * .4, 3) + " yams/s";
     }
 
     function yamFarmFn() {
         document.getElementById("amtYamFarm").innerHTML = "you have " + numberWithCommas(yamFarm) + " Yam Farms";
-        document.getElementById("yamCost").innerHTML = '<span style="color:#f1b545">' + nFormatter((15 + (600 + ((yamFarm + 1) * 12))),3) + '</span>';
-        document.getElementById("yamFarmPS").innerHTML = nFormatter(yamFarm * 1.2, 1) + " yams/s";
+        document.getElementById("yamCost").innerHTML = '<span style="color:#f1b545">' + nFormatter((15 + (600 + ((yamFarm + 1) * 12))), 3) + '</span>';
+        document.getElementById("yamFarmPS").innerHTML = nFormatter(yamFarm * 1.2, 3) + " yams/s";
     }
 
     function numberWithCommas(x) {
@@ -78,8 +80,9 @@
     }
 
     function timer() {
-        yamCnt += (kolaNuts * .4) * .05;
-        yamCnt += (yamFarm * 1.2) * .05;
+        yamCnt += (kolaNuts * 0.4) * 0.05;
+        yamCnt += (yamFarm * 1.2) * 0.05;
+        totalCPS = (yamFarm * 1.2) + (kolaNuts * 0.4);
         update();
     }
 
@@ -103,14 +106,16 @@
     }
 
     function load() {
-        yamCnt = localStorage.getItem("yamCnt");
-        yamCnt = parseInt(yamCnt);
-        kolaNuts = localStorage.getItem("kolaNuts");
-        kolaNuts = parseInt(kolaNuts);
-        yamFarm = localStorage.getItem("yamFarm");
-        yamFarm = parseInt(yamFarm);
-        cursorLvl = localStorage.getItem("cursorLvl");
-        cursorLvl = parseInt(cursorLvl);
+        if (localStorage.getItem("yamCnt") !== null) {
+            yamCnt = localStorage.getItem("yamCnt");
+            yamCnt = parseInt(yamCnt);
+            kolaNuts = localStorage.getItem("kolaNuts");
+            kolaNuts = parseInt(kolaNuts);
+            yamFarm = localStorage.getItem("yamFarm");
+            yamFarm = parseInt(yamFarm);
+            cursorLvl = localStorage.getItem("cursorLvl");
+            cursorLvl = parseInt(cursorLvl);
+        }
     }
 
     function buyUpgrade(num) {
@@ -119,8 +124,7 @@
             yamCnt -= (15 + ((kolaNuts + 1) * 2));
             kolaNuts += 1;
             update();
-        } 
-        else if (num == 2 && (yamCnt >= (600 + ((yamFarm + 1) * 12)))) {
+        } else if (num == 2 && (yamCnt >= (600 + ((yamFarm + 1) * 12)))) {
             yamCnt -= (600 + ((yamFarm + 1) * 12));
             yamFarm += 1;
             update();
@@ -132,13 +136,11 @@
 <body>
     <div class="wrapper">
         <header class="header">
-            Yams Fall Apart&trade; &reg;
-            <a href="https://github.com/CrZ25/">CrZ25</a>
-            , 2019
+            Yams Fall Apart&trade; &reg;<a id="link" href="https://github.com/CrZ25/">CrZ25</a>, 2019
             <div style="float:right;">
-                <a id href="#" onClick="save()">Save</a>
-                <a href="#" onClick="load()">Load</a>
-                <a href="#" onClick="reset()">Reset</a>
+                <a id="naviButt" href="#" onClick="save()">Save</a>
+                <a id="naviButt" href="#" onClick="load()">Load</a>
+                <a id="naviButt" href="#" onClick="reset()">Reset</a>
             </div>
         </header>
         <section class="content">
@@ -154,7 +156,11 @@
                             </div>
                         </div>
                     </div>
+                    <div id="counterOuter">
+                        <p id="cps"></p>
+                    </div>
                     <script type="text/javascript">
+                    load();
                     var input = document.querySelector('input');
                     input.addEventListener('input', resizeInput);
                     </script>
@@ -166,19 +172,19 @@
                     <aside class="sidebar-second">3</aside>
                     <div class="row" id="storeItem">
                         <a href="#" onclick="buyUpgrade(1)">Kola Nut</a>
-                        <div id="price">
+                        <a href="#" id="price" onclick="buyUpgrade(1)">
                             <img src="img/yam.png" style="width:.8em">
                             <span id="kolaCost"></span>
-                        </div>
+                        </a>
                         <p id="amountUpgrade"></p>
                         <p id="kolaPS"></p>
                     </div>
                     <div class="row" id="storeItem">
                         <a href="#" onclick="buyUpgrade(2)">Yam Farm</a>
-                        <div id="price">
+                        <a href="#" id="price" onclick="buyUpgrade(2)">
                             <img src="img/yam.png" style="width:.8em">
                             <span id="yamCost"></span>
-                        </div>
+                        </a>
                         <p id="amtYamFarm"></p>
                         <p id="yamFarmPS"></p>
                     </div>
@@ -192,8 +198,6 @@
         </section>
     </div>
 </body>
-
-
 
 </html>
 <!-- 
