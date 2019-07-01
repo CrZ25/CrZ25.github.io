@@ -136,7 +136,7 @@
 <body>
     <div class="wrapper">
         <header class="header">
-            Yams Fall Apart&trade; &reg;<a id="link" href="https://github.com/CrZ25/">CrZ25</a>, 2019
+            Yams Fall Apart&trade; &reg; <a id="link" href="https://github.com/CrZ25/">CrZ25</a>, 2019
             <div style="float:right;">
                 <a id="naviButt" href="#" onClick="save()">Save</a>
                 <a id="naviButt" href="#" onClick="load()">Load</a>
@@ -145,31 +145,32 @@
         </header>
         <section class="content">
             <div class="columns">
-                <main class="main">
-                    <a href=# onclick="addYams()"><img id="mainYam" src="img/yam.png" draggable="false"></a>
-                    <input id="counter" disabled type="hidden">
-                    <div id="counterOuter">
-                        <div id="siFormat">
-                            <p id="yamcountry2">You're in yam country now, BROTHER.</p>
-                            <div id="decFormat">
-                                <p id="yamcountry">You're in yam country now, BROTHER.</p>
+                <div class="column">
+                    <div class="yamyam">
+                        <a href=# onclick="addYams()"><img id="mainYam" src="img/yam.png" draggable="false"></a>
+                        <input id="counter" disabled type="hidden">
+                        <div id="counterOuter">
+                            <div id="siFormat">
+                                <p id="yamcountry2">You're in yam country now, BROTHER.</p>
+                                <div id="decFormat">
+                                    <p id="yamcountry">You're in yam country now, BROTHER.</p>
+                                </div>
                             </div>
                         </div>
+                        <div id="counterOuter">
+                            <p id="cps"></p>
+                        </div>
+                        <script type="text/javascript">
+                        load();
+                        var input = document.querySelector('input');
+                        input.addEventListener('input', resizeInput);
+                        </script>
                     </div>
-                    <div id="counterOuter">
-                        <p id="cps"></p>
-                    </div>
-                    <script type="text/javascript">
-                    load();
-                    var input = document.querySelector('input');
-                    input.addEventListener('input', resizeInput);
-                    </script>
-                </main>
-                <aside class="sidebar-first"># of kola nuts/farms/etc</aside>
-                <aside class="sidebar-second">
-                    <main class="main">1</main>
-                    <aside class="sidebar-first">2</aside>
-                    <aside class="sidebar-second">3</aside>
+                </div>
+                <div class="column">
+                    # of kola nuts/farms/etc
+                </div>
+                <div class="column">
                     <div class="row" id="storeItem">
                         <a href="#" onclick="buyUpgrade(1)">Kola Nut</a>
                         <a href="#" id="price" onclick="buyUpgrade(1)">
@@ -193,7 +194,7 @@
                         <p id="upgradeCost"></p>
                         <p id="amountUpgrade"></p>
                     </div>
-                </aside>
+                </div>
             </div>
         </section>
     </div>
