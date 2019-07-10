@@ -13,7 +13,8 @@
     <link rel="mask-icon" href="img/icon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <script src="libs/fabric.js"></script>
+    <script src="lib/fabric.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript">
     var yamCnt = 0;
     var kolaNuts = 0;
@@ -25,9 +26,34 @@
     var cursorLvl = 0;
     var totalCPS = 0;
     var cursorTool = ["Digging Stick", ""];
-    var kolaNutPerk = ["Super Nut", "TUNA SUB", "Nut Free Zone", "Nut Button"]
+    var kolaNutPerk = ["Super Nut", "TUNA SUB", "Nut Free Zone", "Nut Button"];
+    var  = ["Kola Nuts", "Yam Farms", "Wives", "Child Soldiers", "Witch Doctors", "Sacrificial Children", "Bank of Yamerica", "Yamborghini Dealership", "YamX", "Yamazon"];
+
+    function Building(name, amount, price, priceIncrease, yps) {
+        this.name = name;
+        this.amount = amount;
+        this.price = price;
+        this.priceIncrease = priceIncrease;
+        this.yps = yps;
+        var yamsTotalPS = this.yps * this.amount;
+    }
+    var buildingYam = [];
+
+    buildingYam.push(new Building("Kola Nuts", 0, kolaNutPrice(), ));
 
     setInterval(timer, 50);
+    timerMultiplier = 50;
+
+    document.addEventListener("visibilitychange", function() {
+        if (document.visibilityState == "hidden") {
+            console.log(document.visibilityState);
+            timerMultiplier = 1000;
+
+        } else if (document.visibilityState == "visible") {
+            console.log(document.visibilityState);
+            timerMultiplier = 50;
+        }
+    });
 
     function update() {
         document.getElementById("counter").value = yamCnt;
@@ -45,37 +71,43 @@
     }
 
     function kolaNut() {
-        document.getElementById("amountUpgrade").innerHTML = "you have " + numberWithCommas(kolaNuts) + " kola nuts";
-        document.getElementById("kolaCost").innerHTML = '<span style="color:#f1b545">' + nFormatter(kolaNutPrice(), 3) + '</span>';
-        document.getElementById("kolaPS").innerHTML = nFormatter(kolaNuts * .1, 3) + " yams/s";
+        document.getElementById("amountUpgrade").innerHTML = numberWithCommas0(kolaNuts) + " Kola Nuts";
+        document.getElementById("kolaCost").innerHTML = '<span style="color:#f1b545" onclick="buyUpgrade(1)">' + nFormatter(kolaNutPrice(), 3) + '</span>';
+        document.getElementById("kolaPS").innerHTML = nFormatter(kolaNuts * .2, 3) + " yams/s";
     }
 
     function yamFarmFn() {
-        document.getElementById("amtYamFarm").innerHTML = "you have " + numberWithCommas(yamFarm) + " Yam Farms";
-        document.getElementById("yamCost").innerHTML = '<span style="color:#f1b545">' + nFormatter(yamFarmPrice(), 3) + '</span>';
+        document.getElementById("amtYamFarm").innerHTML = numberWithCommas0(yamFarm) + " Yam Farms";
+        document.getElementById("yamCost").innerHTML = '<span style="color:#f1b545" onclick="buyUpgrade(2)">' + nFormatter(yamFarmPrice(), 3) + '</span>';
         document.getElementById("yamFarmPS").innerHTML = nFormatter(yamFarm * 1.0, 3) + " yams/s";
     }
 
     function wivesFn() {
-        document.getElementById("amtWives").innerHTML = "you have " + numberWithCommas(wives) + " Yam Farms";
-        document.getElementById("wivesCost").innerHTML = '<span style="color:#f1b545">' + nFormatter(wivesPrice(), 3) + '</span>';
+        document.getElementById("amtWives").innerHTML = numberWithCommas0(wives) + " Wives";
+        document.getElementById("wivesCost").innerHTML = '<span style="color:#f1b545" onclick="buyUpgrade(3)">' + nFormatter(wivesPrice(), 3) + '</span>';
         document.getElementById("wivesPS").innerHTML = nFormatter(wives * 8, 3) + " yams/s";
     }
 
     function childFn() {
-        document.getElementById("amtChild").innerHTML = "you have " + numberWithCommas(child) + " Child Soldiers";
-        document.getElementById("childCost").innerHTML = '<span style="color:#f1b545">' + nFormatter(childPrice(), 3) + '</span>';
+        document.getElementById("amtChild").innerHTML = numberWithCommas0(child) + " Child Soldiers";
+        document.getElementById("childCost").innerHTML = '<span style="color:#f1b545" onclick="buyUpgrade(4)">' + nFormatter(childPrice(), 3) + '</span>';
         document.getElementById("childPS").innerHTML = nFormatter(child * 47, 3) + " yams/s";
     }
 
     function witchFn() {
-        document.getElementById("amtWitch").innerHTML = "you have " + numberWithCommas(witch) + " Witch Doctors";
-        document.getElementById("witchCost").innerHTML = '<span style="color:#f1b545">' + nFormatter(witchPrice(), 3) + '</span>';
+        document.getElementById("amtWitch").innerHTML = numberWithCommas0(witch) + " Witch Doctors";
+        document.getElementById("witchCost").innerHTML = '<span style="color:#f1b545" onclick="buyUpgrade(5)">' + nFormatter(witchPrice(), 3) + '</span>';
         document.getElementById("witchPS").innerHTML = nFormatter(witch * 260, 3) + " yams/s";
     }
 
     function numberWithCommas(x) {
         var parts = x.toFixed(1).toString().split(".");
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        return parts.join(".");
+    }
+
+    function numberWithCommas0(x) {
+        var parts = x.toFixed(0).toString().split(".");
         parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         return parts.join(".");
     }
@@ -105,11 +137,11 @@
     }
 
     function timer() {
-        yamCnt += (kolaNuts * 0.2) * 0.05;
-        yamCnt += (yamFarm * 1.0) * 0.05;
-        yamCnt += (wives * 8) * 0.05;
-        yamCnt += (child * 47) * 0.05;
-        yamCnt += (witch * 260) * 0.05;
+        yamCnt += (kolaNuts * 0.2) * (timerMultiplier / 1000);
+        yamCnt += (yamFarm * 1.0) * (timerMultiplier / 1000);
+        yamCnt += (wives * 8) * (timerMultiplier / 1000);
+        yamCnt += (child * 47) * (timerMultiplier / 1000);
+        yamCnt += (witch * 260) * (timerMultiplier / 1000);
         totalCPS = (yamFarm * 1.0) + (kolaNuts * 0.1) + (wives * 8) + (child * 47) + (witch * 260);
         update();
     }
@@ -212,7 +244,7 @@
     }
 
     function witchPrice() {
-        return (130000 + (witch + 19500));
+        return (130000 + (witch * 19500));
     }
     </script>
 </head>
@@ -222,16 +254,16 @@
         <header class="header">
             Yams Fall Apart&trade; &reg; <a id="link" href="https://github.com/CrZ25/">CrZ25</a>, 2019
             <div style="float:right;">
-                <a id="naviButt" href="#" onClick="save()">Save</a>
-                <a id="naviButt" href="#" onClick="load()">Load</a>
-                <a id="naviButt" href="#" onClick="reset()">Reset</a>
+                <a id="naviButt" href="#/" onClick="save()">Save</a>
+                <a id="naviButt" href="#/" onClick="load()">Load</a>
+                <a id="naviButt" href="#/" onClick="reset()">Reset</a>
             </div>
         </header>
         <section class="content">
             <div class="columns">
                 <div class="column">
                     <div class="yamyam">
-                        <a href=# onclick="addYams()"><img id="mainYam" src="img/yam.png" draggable="false"></a>
+                        <a href="#/" onclick="addYams()"><img id="mainYam" src="img/yam.png" draggable="false"></a>
                         <input id="counter" disabled type="hidden">
                         <div id="counterOuter">
                             <div id="siFormat">
@@ -247,56 +279,80 @@
                         <script type="text/javascript">
                         load();
                         var input = document.querySelector('input');
-                        input.addEventListener('input', resizeInput);
+                        </script>
+                    </div>
+                </div>
+                <div class="column">
+                    <div id="gameContainer">
+                        <canvas id="game" width="600px" height="600px"></canvas>
+                        <script type="text/javascript">
+                        var canvas = new fabric.Canvas('game');
+                        var rect = new fabric.Rect({
+                            left: 100,
+                            top: 150,
+                            fill: 'blue',
+                            width: 200,
+                            height: 200
+                        });
+                        canvas.add(rect);
+                        canvas.backgroundColor = "red";
+                        $(window).resize(function() {
+                            if ($(window).width() < 992) {
+                                canvas.setWidth($(window).width());
+                                canvas.setHeight($(window).height());
+                            } else {
+                                canvas.setWidth($(window).width() / 3);
+                                canvas.setHeight($(window).height() - 32);
+                            }
+                        });
+
+                        $(window).trigger('resize');
                         </script>
                     </div>
                 </div>
                 <div class="column" id="scrollables">
-                    # of kola nuts/farms/etc
-                </div>
-                <div class="column" id="scrollables">
                     <div class="row" id="storeItem">
-                        <a href="#" onclick="buyUpgrade(1)">Kola Nut</a>
-                        <a href="#" id="price" onclick="buyUpgrade(1)">
+                        <a href="#/" onclick="buyUpgrade(1)">Kola Nut</a>
+                        <button href="#/" id="price" onclick="buyUpgrade(1)">
                             <img src="img/yam.png" style="width:.8em">
                             <span id="kolaCost"></span>
-                        </a>
+                        </button>
                         <p id="amountUpgrade"></p>
                         <p id="kolaPS"></p>
                     </div>
                     <div class="row" id="storeItem">
-                        <a href="#" onclick="buyUpgrade(2)">Yam Farm</a>
-                        <a href="#" id="price" onclick="buyUpgrade(2)">
+                        <a href="#/" onclick="buyUpgrade(2)">Yam Farm</a>
+                        <button href="#/" id="price" onclick="buyUpgrade(2)">
                             <img src="img/yam.png" style="width:.8em">
                             <span id="yamCost"></span>
-                        </a>
+                        </button>
                         <p id="amtYamFarm"></p>
                         <p id="yamFarmPS"></p>
                     </div>
                     <div class="row" id="storeItem">
-                        <a href="#" onclick="buyUpgrade(3)">Wives</a>
-                        <a href="#" id="price" onclick="buyUpgrade(3)">
+                        <a href="#/" onclick="buyUpgrade(3)">Wives</a>
+                        <button href="#/" id="price" onclick="buyUpgrade(3)">
                             <img src="img/yam.png" style="width:.8em">
                             <span id="wivesCost"></span>
-                        </a>
+                        </button>
                         <p id="amtWives"></p>
                         <p id="wivesPS"></p>
                     </div>
                     <div class="row" id="storeItem">
-                        <a href="#" onclick="buyUpgrade(4)">Child Soldiers</a>
-                        <a href="#" id="price" onclick="buyUpgrade(4)">
+                        <a href="#/" onclick="buyUpgrade(4)">Child Soldiers</a>
+                        <button href="#/" id="price" onclick="buyUpgrade(4)">
                             <img src="img/yam.png" style="width:.8em">
                             <span id="childCost"></span>
-                        </a>
+                        </button>
                         <p id="amtChild"></p>
                         <p id="childPS"></p>
                     </div>
                     <div class="row" id="storeItem">
-                        <a href="#" onclick="buyUpgrade(5)">Witch Doctor</a>
-                        <a href="#" id="price" onclick="buyUpgrade(5)">
+                        <a href="#/" onclick="buyUpgrade(5)">Witch Doctor</a>
+                        <button href="#/" id="price" onclick="buyUpgrade(5)">
                             <img src="img/yam.png" style="width:.8em">
                             <span id="witchCost"></span>
-                        </a>
+                        </button>
                         <p id="amtWitch"></p>
                         <p id="witchPS"></p>
                     </div>
@@ -307,12 +363,3 @@
 </body>
 
 </html>
-<!-- 
-1 yam farm
-2 many wives - random chance of children
-3 child soldiers 
-4 witch docta
-5 sacrificial sons
-
-frenzy : 
--->
