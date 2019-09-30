@@ -1,185 +1,196 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <title>Manufacturing Form</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="js/form.js"></script>
-    <script src="js/submit.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <style type="css/styles.css"></style>
-  </head>
+<head>
+  <title>Manufacturing Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/submit.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <style type="css/styles.css"></style>
+</head>
 
-  <body>
-    <div class="container">
-      <form method="GET" id="manufacturing-form">
-        <h1>Manufacturing Form</h1>
-        <div class="form-group">
-          <div class="form-group row">
-            <label for="date-created-input" class="col-3 col-form-label">Date Created: </label>
-            <div class="col-9">
-              <input class="form-control" type="date" value="" name="date-created-input" id="date-created-input">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="customer-name-input" class="col-3 col-form-label">Customer Name:</label>
-            <div class="col-9">
-              <input class="form-control" type="text" placeholder="Name" name="customer-name-input" id="customer-name-input">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="sales-person-input" class="col-3 col-form-label">Sales Person:</label>
-            <div class="col-9">
-              <input class="form-control" type="text" placeholder="Name" name="sales-person-input" id="sales-person-input">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="quote-number-input" class="col-3 col-form-label">Quote #:</label>
-            <div class="col-9">
-              <input class="form-control" type="text" placeholder="###" name="quote-number-input" id="quote-number-input">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="po-number-input" class="col-3 col-form-label">PO #:</label>
-            <div class="col-9">
-              <input class="form-control" type="text" placeholder="###" name="po-number-input" id="po-number-input">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="invoice-number-input" class="col-3 col-form-label">Invoice #:</label>
-            <div class="col-9">
-              <input class="form-control" type="text" placeholder="###" name="invoice-number-input" id="invoice-number-input">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="product-name-input" class="col-3 col-form-label">Product Name:</label>
-            <div class="col-9">
-              <input class="form-control" type="text" placeholder="Product Name" name="product-name-input" id="product-name-input">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="lot-number-input" class="col-3 col-form-label">Lot #:</label>
-            <div class="col-9">
-              <input class="form-control" type="text" placeholder="###" name="lot-number-input" id="lot-number-input">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="npn-number-input" class="col-3 col-form-label">NPN #:</label>
-            <div class="col-9">
-              <input class="form-control" type="text" placeholder="###" name="npn-number-input" id="npn-number-input">
-            </div>
+<body>
+  <div class="container">
+    <form id="manufacturing-form">
+      <h1>Manufacturing Form</h1>
+      <div class="form-group">
+        <div class="form-group row">
+          <label for="date-created-input" class="col-3 col-form-label">Date Created: </label>
+          <div class="col-9">
+            <input class="form-control" type="date" value="" name="date-created-input" id="date-created-input">
           </div>
         </div>
-        <h2>Raw Materials</h2>
-        <div class="form-group">
-          <div class="form-group row">
-            <label class="col-3">Description</label>
-            <label class="col-1">Quantity Required</label>
-            <label class="col-2">Supplier</label>
-            <label class="col-1">Lead Time</label>
-            <label class="col-1">Cost</label>
-            <label class="col-4">Notes</label>
-          </div>
-          <input type="hidden" name="raw-materials" id="raw-materials" value="1">
-          <div class="form-raw-container">
-            <div class="form-raw row" id="form-raw-1">
-              <textarea class="form-control col-3" name="raw-description-1" type="textbox" placeholder="Description" id="raw-description-input-1"></textarea>
-              <input class="form-control col-1" name="raw-quantity-1" type="text" placeholder="Qty" id="raw-qty-1">
-              <input class="form-control col-2" name="raw-supplier-1" type="text" placeholder="Supplier" id="raw-supplier-1">
-              <input class="form-control col-1" name="raw-lead-1" type="text" placeholder="Lead Time" id="raw-lead-1">
-              <input class="form-control col-1" name="raw-cost-1" type="text" placeholder="Cost" id="raw-cost-1">
-              <textarea class="form-control col-4" name="raw-notes-1" type="textbox" placeholder="Notes" id="raw-notes-1"></textarea>
-            </div>
-            <!-- We'll be adding additional inputs here -->
-          </div>
-          <div class="form-raw-add">
-            <input type="button" class="btn btn-primary" value="+ Raw Material" id="add-raw">
+        <div class="form-group row">
+          <label for="customer-name-input" class="col-3 col-form-label">Customer Name:</label>
+          <div class="col-9">
+            <input class="form-control" type="text" placeholder="Name" name="customer-name-input" id="customer-name-input">
           </div>
         </div>
-        <h2>Packaging</h2>
-        <div class="form-group">
-          <div class="form-group row">
-            <label class="col-3">Description</label>
-            <label class="col-1">Quantity Required</label>
-            <label class="col-2">Supplier</label>
-            <label class="col-1">Lead Time</label>
-            <label class="col-1">Cost</label>
-            <label class="col-4">Notes</label>
-          </div>
-          <input type="hidden" name="packaging-materials" id="packaging-materials" value="1">
-          <div class="form-packaging-container">
-            <div class="form-packaging row" id="form-packaging-1">
-              <textarea class="form-control col-3" name="packaging-description-1" type="textbox" placeholder="Description" id="packaging-description-1"></textarea>
-              <input class="form-control col-1" name="packaging-quantity-1" type="text" placeholder="Qty" id="packaging-qty-1">
-              <input class="form-control col-2" name="packaging-supplier-1" type="text" placeholder="Supplier" id="packaging-supplier-1">
-              <input class="form-control col-1" name="packaging-lead-1" type="text" placeholder="Lead Time" id="packaging-lead-1">
-              <input class="form-control col-1" name="packaging-cost-1" type="text" placeholder="Cost" id="packaging-cost-1">
-              <textarea class="form-control col-4" name="packaging-notes-1" type="textbox" placeholder="Notes" id="packaging-notes-1"></textarea>
-            </div>
-            <!-- We'll be adding additional inputs here -->
-          </div>
-          <div class="form-packaging-add">
-            <input type="button" class="btn btn-primary" value="+ Packaging" id="add-packaging">
+        <div class="form-group row">
+          <label for="sales-person-input" class="col-3 col-form-label">Sales Person:</label>
+          <div class="col-9">
+            <input class="form-control" type="text" placeholder="Name" name="sales-person-input" id="sales-person-input">
           </div>
         </div>
-        <h2>Production</h2>
-        <div class="form-group">
-          <div class="form-group row">
-            <label class="col-4">Production Type</label>
-            <label class="col-2">Estimated Hours</label>
-            <label class="col-2">Actual Hours</label>
-            <label class="col-4">Staff</label>
-          </div>
-          <input type="hidden" name="production-materials" id="form-production-materials" value="1">
-          <div class="form-production-container">
-            <div class="form-production row" id="form-production-1">
-              <select class="custom-select form-control col-4" name="production-select-1" id="production-select-1">
-                <option value="">Choose</option>
-                <option value="Mixing">Mixing</option>
-                <option value="Encapsulation">Encapsulation</option>
-                <option value="Polishing">Polishing</option>
-                <option value="Bottling">Bottling</option>
-                <option value="Labelling">Labelling</option>
-                <option value="Packaging">Packaging</option>
-                <option value="Other">Other</option>
-              </select>
-              <input class="form-control col-2" name="production-estimated-hours-1" type="text" placeholder="Estimated Hours" id="production-estimated-hours-1">
-              <input class="form-control col-2" name="production-actual-hours-1" type="text" placeholder="Actual Hours" id="production-actual-hours-1">
-              <input class="form-control col-4" name="production-staff-1" type="text" placeholder="Staff Name" id="production-staff-1">
-            </div>
-            <!-- We'll be adding additional inputs here -->
-          </div>
-          <div class="form-production-add">
-            <input type="button" class="btn btn-primary" value="+ Production" id="add-production">
-          </div>
-          <br>
-        </div>
-        <h1>Review</h1>
-        <div class="form-group">
-          <div class="form-group row">
-            <label for="reviewed-by-input" class="col-3 col-form-label">Reviewed By: </label>
-            <div class="col-9">
-              <input class="form-control" type="text" placeholder="Name" value="" name="reviewed-by-input" id="reviewed-by-input">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="production-date-input" class="col-3 col-form-label">Production Date: </label>
-            <div class="col-9">
-              <input class="form-control" type="date" value="" name="production-date-input" id="production-date-input">
-            </div>
+        <div class="form-group row">
+          <label for="quote-number-input" class="col-3 col-form-label">Quote #:</label>
+          <div class="col-9">
+            <input class="form-control" type="text" placeholder="###" name="quote-number-input" id="quote-number-input">
           </div>
         </div>
-        <div class="form-contacts-submit">
-          <input type="submit" class="btn btn-primary" name="submit" id="submit-form" value="Submit">
+        <div class="form-group row">
+          <label for="po-number-input" class="col-3 col-form-label">PO #:</label>
+          <div class="col-9">
+            <input class="form-control" type="text" placeholder="###" name="po-number-input" id="po-number-input">
+          </div>
         </div>
-        <br><br>
-      </form>
-    </div>
-  </body>
+        <div class="form-group row">
+          <label for="invoice-number-input" class="col-3 col-form-label">Invoice #:</label>
+          <div class="col-9">
+            <input class="form-control" type="text" placeholder="###" name="invoice-number-input" id="invoice-number-input">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="product-name-input" class="col-3 col-form-label">Product Name:</label>
+          <div class="col-9">
+            <input class="form-control" type="text" placeholder="Product Name" name="product-name-input" id="product-name-input">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="lot-number-input" class="col-3 col-form-label">Lot #:</label>
+          <div class="col-9">
+            <input class="form-control" type="text" placeholder="###" name="lot-number-input" id="lot-number-input">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="npn-number-input" class="col-3 col-form-label">NPN #:</label>
+          <div class="col-9">
+            <input class="form-control" type="text" placeholder="###" name="npn-number-input" id="npn-number-input">
+          </div>
+        </div>
+      </div>
+      <h2>Raw Materials</h2>
+      <div class="form-group">
+        <div class="form-group row">
+          <label class="col-3">Description</label>
+          <label class="col-1">Quantity Required</label>
+          <label class="col-2">Supplier</label>
+          <label class="col-1">Lead Time</label>
+          <label class="col-1">Cost</label>
+          <label class="col-4">Notes</label>
+        </div>
+        <input type="hidden" name="raw-materials" id="raw-materials" value="1">
+        <div class="form-raw-container">
+          <div class="form-raw row" id="form-raw-1">
+            <textarea class="form-control col-3" name="raw-description-1" type="textbox" placeholder="Description" id="raw-description-input-1"></textarea>
+            <input class="form-control col-1" name="raw-quantity-1" type="text" placeholder="Qty" id="raw-qty-1">
+            <input class="form-control col-2" name="raw-supplier-1" type="text" placeholder="Supplier" id="raw-supplier-1">
+            <input class="form-control col-1" name="raw-lead-1" type="text" placeholder="Lead Time" id="raw-lead-1">
+            <input class="form-control col-1" name="raw-cost-1" type="text" placeholder="Cost" id="raw-cost-1">
+            <textarea class="form-control col-4" name="raw-notes-1" type="textbox" placeholder="Notes" id="raw-notes-1"></textarea>
+          </div>
+          <!-- We'll be adding additional inputs here -->
+        </div>
+        <div class="form-raw-add">
+          <input type="button" class="btn btn-primary" value="+ Raw Material" id="add-raw">
+        </div>
+      </div>
+      <h2>Packaging</h2>
+      <div class="form-group">
+        <div class="form-group row">
+          <label class="col-3">Description</label>
+          <label class="col-1">Quantity Required</label>
+          <label class="col-2">Supplier</label>
+          <label class="col-1">Lead Time</label>
+          <label class="col-1">Cost</label>
+          <label class="col-4">Notes</label>
+        </div>
+        <input type="hidden" name="packaging-materials" id="packaging-materials" value="1">
+        <div class="form-packaging-container">
+          <div class="form-packaging row" id="form-packaging-1">
+            <textarea class="form-control col-3" name="packaging-description-1" type="textbox" placeholder="Description" id="packaging-description-1"></textarea>
+            <input class="form-control col-1" name="packaging-quantity-1" type="text" placeholder="Qty" id="packaging-qty-1">
+            <input class="form-control col-2" name="packaging-supplier-1" type="text" placeholder="Supplier" id="packaging-supplier-1">
+            <input class="form-control col-1" name="packaging-lead-1" type="text" placeholder="Lead Time" id="packaging-lead-1">
+            <input class="form-control col-1" name="packaging-cost-1" type="text" placeholder="Cost" id="packaging-cost-1">
+            <textarea class="form-control col-4" name="packaging-notes-1" type="textbox" placeholder="Notes" id="packaging-notes-1"></textarea>
+          </div>
+          <!-- We'll be adding additional inputs here -->
+        </div>
+        <div class="form-packaging-add">
+          <input type="button" class="btn btn-primary" value="+ Packaging" id="add-packaging">
+        </div>
+      </div>
+      <h2>Production</h2>
+      <div class="form-group">
+        <div class="form-group row">
+          <label class="col-4">Production Type</label>
+          <label class="col-2">Estimated Hours</label>
+          <label class="col-2">Actual Hours</label>
+          <label class="col-4">Staff</label>
+        </div>
+        <input type="hidden" name="production-materials" id="form-production-materials" value="1">
+        <div class="form-production-container">
+          <div class="form-production row" id="form-production-1">
+            <select class="custom-select form-control col-4" name="production-select-1" id="production-select-1">
+              <option value="">Choose</option>
+              <option value="Mixing">Mixing</option>
+              <option value="Encapsulation">Encapsulation</option>
+              <option value="Polishing">Polishing</option>
+              <option value="Bottling">Bottling</option>
+              <option value="Labelling">Labelling</option>
+              <option value="Packaging">Packaging</option>
+              <option value="Other">Other</option>
+            </select>
+            <input class="form-control col-2" name="production-estimated-hours-1" type="text" placeholder="Estimated Hours" id="production-estimated-hours-1">
+            <input class="form-control col-2" name="production-actual-hours-1" type="text" placeholder="Actual Hours" id="production-actual-hours-1">
+            <input class="form-control col-4" name="production-staff-1" type="text" placeholder="Staff Name" id="production-staff-1">
+          </div>
+          <!-- We'll be adding additional inputs here -->
+        </div>
+        <div class="form-production-add">
+          <input type="button" class="btn btn-primary" value="+ Production" id="add-production">
+        </div>
+        <br>
+      </div>
+      <h1>Review</h1>
+      <div class="form-group">
+        <div class="form-group row">
+          <label for="reviewed-by-input" class="col-3 col-form-label">Reviewed By: </label>
+          <div class="col-9">
+            <input class="form-control" type="text" placeholder="Name" value="" name="reviewed-by-input" id="reviewed-by-input">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="production-date-input" class="col-3 col-form-label">Production Date: </label>
+          <div class="col-9">
+            <input class="form-control" type="date" value="" name="production-date-input" id="production-date-input">
+          </div>
+        </div>
+      </div>
+      <div class="form-contacts-submit">
+        <input type="submit" class="btn btn-primary" name="submit" id="submit-form" value="submit">
+      </div>
+      <br><br>
+    </form>
+  </div>
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycby5ktnV2GHnihzQ0UDfMcawGsxvaT5v4PHDUy6lOM7ZgVS2xA/exec';
+    const form = document.forms['manufacturing-form'];
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message));
+    });
+  </script>
+</body>
 
 </html>
