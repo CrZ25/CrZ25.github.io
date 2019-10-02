@@ -20,13 +20,56 @@
 				This new resource page will be updated frequently. Check back often. If you have a suggestion for information that is not present please email <a href="mailto:support@sangsters.com?Subject=Suggestions%20for%20Information" target="_top">support@sangsters.com</a>. We want to know what you have to say! Communication is the key to success!<p>
 		</div>
 		<div class="row">
+			<!-- 
+			<div class="col">
+				<a class="twitter-timeline" href="https://twitter.com/EastWestbiosci?ref_src=twsrc%5Etfw">Tweets by EastWestbiosci</a>
+				<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+			</div> 
+			-->
+		</div>
+		<div class="row">
+			<div class="col">
+				<!-- TradingView Widget BEGIN -->
+				<div class="tradingview-widget-container">
+					<div id="tradingview_3be02"></div>
+					<div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/TSXV-EAST/" rel="noopener" target="_blank"><span class="blue-text">EAST Chart</span></a> by TradingView</div>
+					<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+					<script type="text/javascript">
+					new TradingView.widget({
+						"symbol": "TSXV:EAST",
+						"interval": "D",
+						"timezone": "Etc/UTC",
+						"theme": "Light",
+						"style": "1",
+						"locale": "en",
+						"toolbar_bg": "#f1f3f6",
+						"enable_publishing": false,
+						"container_id": "tradingview_3be02"
+					});
+					</script>
+				</div>
+			</div>
+			<!-- TradingView Widget END -->
+		</div>
+		<div class="row">
+			<div class="table-responsive">
+				<table id="example">
+					<thead>
+						<th class="th-sm">brand</th>
+						<th class="th-sm">model</th>
+						<th class="th-sm">year</th>
+					</thead>
+				</table>
+			</div>
+		</div>
+		<div class="row">
 			<h3>Items Out of Stock</h3>
 			<div class="table-responsive">
 				<table id="dtIaZ" class="table table-hover">
 					<thead>
-						<th class="th-sm th-click">SKU</th>
-						<th class="th-sm th-click">Name</th>
-						<th class="th-sm th-click">Status</th>
+						<th class="th-sm">SKU</th>
+						<th class="th-sm">Name</th>
+						<th class="th-sm">Status</th>
 						<th class="th-sm">Estimated Days for Delay</th>
 						<th class="th-sm">Details</th>
 					</thead>
@@ -365,7 +408,22 @@
 		<script type="text/javascript">
 		$(document).ready(function() {
 			$('#dtIaZ').DataTable();
+			example();
 		});
+
+		function example() {
+			$('#example').dataTable({
+				"bServerSide": false,
+				"bProcessing": true,
+				"sAjaxDataProp": "feed.entry",
+				"sAjaxSource": "https://spreadsheets.google.com/feeds/list/0Ah5i4flVQwqEdHVRU0ZFWnVDSjVIaXdyNjJQR2ZtbEE/od6/public/values?alt=json",
+				"aoColumns": [
+					{ "mDataProp": "gsx$carmake.$t" },
+					{ "mDataProp": "gsx$model.$t" },
+					{ "mDataProp": "gsx$year.$t" },
+				]
+			});
+		}
 		</script>
 	</div>
 </body>
