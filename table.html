@@ -10,7 +10,6 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 	<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-
 	<style type="text/css">
 	.jumbotron {
 		color: white;
@@ -32,24 +31,37 @@
 		border: 2px solid rgb(126, 170, 58);
 		border-radius: 2px;
 	}
+
 	table.dataTable thead tr {
 		background-color: rgb(126, 170, 58);
 		border-radius: 2px;
 		color: #fff;
 	}
-	.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
-        color: white !important;
-        border: 0;
-        border-radius: 4px;
-        background: rgb(126, 170, 58);
-    }
 
-    .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-        color: black !important;
-        border: 1px solid white;
-        border-radius: 4px;
+	.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+	.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+		color: white !important;
+		border: 0;
+		border-radius: 4px;
+		background: rgb(126, 170, 58);
+	}
 
-        background: rgba(126, 170, 58, .8);
+	.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+		color: black !important;
+		border: 1px solid white;
+		border-radius: 4px;
+
+		background: rgba(126, 170, 58, .8);
+	}
+
+	.dataTables_wrapper .dataTables_filter input {
+		border-radius: 7px;
+		border: 2px solid rgb(126, 170, 58);
+	}
+
+	.dataTables_wrapper .dataTables_length select {
+		
+	}
 	</style>
 </head>
 
@@ -88,7 +100,7 @@
 				</div>
 			</div>
 		</div> -->
-		<hr/>
+		<hr />
 		<div class="row">
 			<h3><mark>ITEMS OUT OF STOCK<mark></h3>
 			<div class="table-responsive">
@@ -444,7 +456,7 @@
 				</tr>
 			</table>
 		</div>
-		<hr/>
+		<hr />
 		<script type="text/javascript">
 		$(document).ready(function() {
 			$('#dtIaZ').DataTable();
