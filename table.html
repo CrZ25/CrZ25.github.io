@@ -10,15 +10,43 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 	<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+	<style type="text/css">
+	.jumbotron {
+		color: white;
+		background-image: url("https://cdn.shopify.com/s/files/1/1902/7765/files/clearance_banner_v1b_1400x.jpeg?v=1557182281");
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 100vh;
+	}
+
+	mark {
+		background-color: rgba(126, 170, 58, .9);
+		color: #FFF;
+	}
+
+	hr {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+		border: 2px solid rgb(126, 170, 58);
+		border-radius: 2px;
+	}
+	</style>
 </head>
 
 <body>
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row">
-			<h3>WELCOME TO THE SANGSTER’S FRANCHISEE SUPPORT HUB!</h3>
-			<p>
-				This new resource page will be updated frequently. Check back often. If you have a suggestion for information that is not present please email <a href="mailto:support@sangsters.com?Subject=Suggestions%20for%20Information" target="_top">support@sangsters.com</a>. We want to know what you have to say! Communication is the key to success!<p>
+			<div class="jumbotron jumbotron-fluid">
+				<div class="container">
+					<h1 class="display-4" style="line-height: 1.6em"><mark>WELCOME TO THE SANGSTER’S FRANCHISEE SUPPORT HUB!</mark></h1>
+					<p style="line-height: 1.64em"><mark>This new resource page will be updated frequently. Check back often. If you have a suggestion for information that is not present please email <a href="mailto:support@sangsters.com?Subject=Suggestions%20for%20Information" target="_top">support@sangsters.com</a>. We want to know what you have to say! Communication is the key to success!</mark></p>
+				</div>
+			</div>
 		</div>
+	</div>
+	<div class="container">
+		<!-- Stocks View -->
 		<!-- <div class="row">
 			<div class="col">
 				<div class="tradingview-widget-container">
@@ -360,6 +388,7 @@
 			</div>
 		</div>
 		 -->
+		<hr />
 		<div class="row">
 			<h3>CONTACT US</h3>
 			<table class="table table-hover">
@@ -381,7 +410,7 @@
 				<tr>
 					<th>IT</th>
 					<td>Chris</td>
-					<td><a href="mailto:it@sangsters.com">it@sangsters.com</a></td>
+					<td><a href="mailto:itsupport@sangsters.com">itsupport@sangsters.com</a></td>
 				</tr>
 				<tr>
 					<th>Support</th>
@@ -393,34 +422,16 @@
 					<td>Anh</td>
 					<td><a href="mailto:accounting@sangsters.com">accounting@sangsters.com</a></td>
 				</tr>
-				<tr>
-					<th></th>
-					<td></td>
-					<td><a href="mailto:"></a></td>
-				</tr>
 			</table>
 		</div>
 		<script type="text/javascript">
 		$(document).ready(function() {
 			$('#dtIaZ').DataTable();
-			// example();
 			dynamicItemsatZero();
 		});
 
-		// function example() {
-		// 	$('#example').dataTable({
-		// 		"bServerSide": false,
-		// 		"bProcessing": true,
-		// 		"sAjaxDataProp": "feed.entry",
-		// 		"sAjaxSource": "https://spreadsheets.google.com/feeds/list/0Ah5i4flVQwqEdHVRU0ZFWnVDSjVIaXdyNjJQR2ZtbEE/od6/public/values?alt=json",
-		// 		"aoColumns": [
-		// 			{ "mDataProp": "gsx$carmake.$t" },
-		// 			{ "mDataProp": "gsx$model.$t" },
-		// 			{ "mDataProp": "gsx$year.$t" },
-		// 		]
-		// 	});
-		// }
-
+		// table populate
+		// https://datatables.net/forums/discussion/5611/how-to-grab-datatables-data-from-a-google-spreadsheet
 		function dynamicItemsatZero() {
 			$('#dtIaZSheets').dataTable({
 				"bServerSide": false,
@@ -436,6 +447,13 @@
 				]
 			});
 		}
+
+
+		$(".jumbotron").css({ height: $(window).height() + "px" });
+
+		$(window).on("resize", function() {
+			$(".jumbotron").css({ height: $(window).height() + "px" });
+		});
 		</script>
 	</div>
 </body>
