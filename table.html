@@ -10,6 +10,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 	<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
 	<style type="text/css">
 	.jumbotron {
 		color: white;
@@ -31,6 +32,24 @@
 		border: 2px solid rgb(126, 170, 58);
 		border-radius: 2px;
 	}
+	table.dataTable thead tr {
+		background-color: rgb(126, 170, 58);
+		border-radius: 2px;
+		color: #fff;
+	}
+	.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+        color: white !important;
+        border: 0;
+        border-radius: 4px;
+        background: rgb(126, 170, 58);
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+        color: black !important;
+        border: 1px solid white;
+        border-radius: 4px;
+
+        background: rgba(126, 170, 58, .8);
 	</style>
 </head>
 
@@ -44,7 +63,7 @@
 	<div class="container">
 		<div class="row">
 			<h1 class="display-4" style="line-height: 1.6em;"><mark>WELCOME TO THE SANGSTER’S FRANCHISEE SUPPORT HUB!</mark></h1>
-			<p style="line-height: 1.64em;"><mark>This new resource page will be updated frequently. Check back often. If you have a suggestion for information that is not present please email <a href="mailto:support@sangsters.com?Subject=Suggestions%20for%20Information" target="_top" style="color: black">support@sangsters.com</a>. We want to know what you have to say! Communication is the key to success!</mark></p>
+			<p style="line-height: 1.64em;"><mark>This new resource page will be updated frequently. Check back often. If you have a suggestion for information that is not present please email <a href="mailto:support@sangsters.com?Subject=Suggestions%20for%20Information" target="_top" style="color: white">support@sangsters.com</a>. We want to know what you have to say! Communication is the key to success!</mark></p>
 		</div>
 		<!-- Stocks View -->
 		<!-- <div class="row">
@@ -69,8 +88,9 @@
 				</div>
 			</div>
 		</div> -->
+		<hr/>
 		<div class="row">
-			<h3>Items Out of Stock</h3>
+			<h3><mark>ITEMS OUT OF STOCK<mark></h3>
 			<div class="table-responsive">
 				<table id="dtIaZSheets" class="table table-hover">
 					<thead>
@@ -390,7 +410,7 @@
 		 -->
 		<hr />
 		<div class="row">
-			<h3>CONTACT US</h3>
+			<h3><mark>CONTACT US<mark></h3>
 			<table class="table table-hover">
 				<thead>
 					<th>Department</th>
@@ -424,6 +444,7 @@
 				</tr>
 			</table>
 		</div>
+		<hr/>
 		<script type="text/javascript">
 		$(document).ready(function() {
 			$('#dtIaZ').DataTable();
