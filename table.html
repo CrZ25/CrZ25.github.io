@@ -18,7 +18,7 @@
 		background-color: #fff;
 		background-repeat: no-repeat;
 		background-size: cover;
-		height:365px;
+		height: 365px;
 	}
 
 	mark {
@@ -97,9 +97,25 @@
 				</div>
 			</div>
 		</div> -->
-		<hr />
+		<hr>
 		<div class="row">
-			<h3><mark>ITEMS OUT OF STOCK<mark></h3>
+			<h1><mark>OUR PRODUCTS</mark></h1>
+		</div>
+		<div class="row">
+			<h3><mark>New Products</mark></h3>
+			<p>- with Education Links</p>
+		</div>
+		<div class="row">
+			<h3><mark>New Suppliers</mark></h3>
+			<p>- With downloadable Pamphlets / flyers in addition to ones currently emailed</p>
+		</div>
+		<div class="row">
+			<h3><mark>Franchisee Product Catalogue</mark></h3>
+			<p>- link to download or order a printed copy</p>
+		</div>
+		<hr>
+		<div class="row">
+			<h1><mark>ITEMS OUT OF STOCK<mark></h1>
 			<div class="table-responsive">
 				<table id="dtIaZSheets" class="table table-hover">
 					<thead>
@@ -112,7 +128,49 @@
 				</table>
 			</div>
 		</div>
-		<hr />
+		<hr>
+		<div class="row">
+			<h1><mark>OUR BUSINESS</mark></h1>
+		</div>
+		<div class="row">
+			<h3><mark>Business News</mark></h3>
+			<p>- Links to Newsletters and Special Info Releases</p>
+		</div>
+		<div class="row">
+			<h3><mark>Employee Education</mark></h3>
+			<p>- Link to request forms for Pamphlet Course and Nutritional Consultant Course - Education Rep. Contact Info</p>
+			<p>- Info coming from Yvette</p>
+		</div>
+		<div class="row">
+			<h3><mark>Social Media & Branding</mark></h3>
+			<p>- files containing FB Headers, Social Media Posting Suggestions, National Holidays Calendar, Graphics for Franchisee use</p>
+			<p>- Files coming from Amera</p>
+		</div>
+		<div class="row">
+			<h3><mark>Request for Additional Support</mark></h3>
+			<div class="container">
+				<form method="POST" action="https://formspree.io/support@sangsters.com">
+					<div class="form-group">
+						<div class="form-group row">
+							<label class="col-3 col-form-label">Email:</label>
+							<div class="col-9">
+								<input class="form-control" type="email" name="email" placeholder="Your Email">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-3 col-form-label">Inquiry:</label>
+							<div class="col-9">
+								<textarea class="form-control" name="message" placeholder="Request for Additional Support"></textarea>
+							</div>
+						</div>
+						<div class="form-group" row>
+							<button class="btn btn-primary" type="submit" style="background-color: rgb(126, 170, 58); border: 0;">Send Request</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<hr>
 		<div class="row">
 			<h3><mark>CONTACT US<mark></h3>
 			<table class="table table-hover">
@@ -174,10 +232,10 @@
 		}
 
 
-		$(".jumbotron").css({ height: $(window).height()/3 + "px" });
+		$(".jumbotron").css({ height: $(window).height() / 3 + "px" });
 
 		$(window).on("resize", function() {
-			$(".jumbotron").css({ height: $(window).height()/3 + "px" });
+			$(".jumbotron").css({ height: $(window).height() / 3 + "px" });
 		});
 		</script>
 	</div>
