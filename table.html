@@ -38,14 +38,14 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="jumbotron jumbotron-fluid">
-				<div class="container">
-					<h1 class="display-4" style="line-height: 1.6em"><mark>WELCOME TO THE SANGSTER’S FRANCHISEE SUPPORT HUB!</mark></h1>
-					<p style="line-height: 1.64em"><mark>This new resource page will be updated frequently. Check back often. If you have a suggestion for information that is not present please email <a href="mailto:support@sangsters.com?Subject=Suggestions%20for%20Information" target="_top">support@sangsters.com</a>. We want to know what you have to say! Communication is the key to success!</mark></p>
-				</div>
 			</div>
 		</div>
 	</div>
 	<div class="container">
+		<div class="row">
+			<h1 class="display-4" style="line-height: 1.6em;"><mark>WELCOME TO THE SANGSTER’S FRANCHISEE SUPPORT HUB!</mark></h1>
+			<p style="line-height: 1.64em;"><mark>This new resource page will be updated frequently. Check back often. If you have a suggestion for information that is not present please email <a href="mailto:support@sangsters.com?Subject=Suggestions%20for%20Information" target="_top" style="color: black">support@sangsters.com</a>. We want to know what you have to say! Communication is the key to success!</mark></p>
+		</div>
 		<!-- Stocks View -->
 		<!-- <div class="row">
 			<div class="col">
@@ -449,10 +449,10 @@
 		}
 
 
-		$(".jumbotron").css({ height: $(window).height() + "px" });
+		$(".jumbotron").css({ height: $(window).height() / 4 + "px" });
 
 		$(window).on("resize", function() {
-			$(".jumbotron").css({ height: $(window).height() + "px" });
+			$(".jumbotron").css({ height: $(window).height() / 4 + "px" });
 		});
 		</script>
 	</div>
