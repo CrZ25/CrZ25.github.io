@@ -71,6 +71,23 @@
 		background-color: rgba(126, 170, 58, .4);
 		transition: .2s all ease;
 	}
+
+	.panel-heading {
+		background-color: rgb(126, 170, 58);
+	}
+
+	.panel-title {
+		color: #fff;
+	}
+
+	.arrow-down {
+		width: 0;
+		height: 6px;
+		border-left: 6px solid transparent;
+		border-right: 6px solid transparent;
+
+		border-top: 10px solid #fff;
+	}
 	</style>
 </head>
 
@@ -133,6 +150,20 @@
 		</div>
 		<hr>
 		<div class="row">
+			<h1><mark>TOP 20 ITEMS<mark></h1>
+			<div class="table-responsive">
+				<table id="top20Sheets" class="table table-hover">
+					<thead>
+						<th class="th-sm">rep1</th>
+						<th class="th-sm">rep2</th>
+						<th class="th-sm">rep3</th>
+						<th class="th-sm">rep4</th>
+					</thead>
+				</table>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
 			<h1><mark>ITEMS OUT OF STOCK<mark></h1>
 			<div class="table-responsive">
 				<table id="dtIaZSheets" class="table table-hover">
@@ -151,24 +182,60 @@
 			<h1><mark>OUR BUSINESS</mark></h1>
 		</div>
 		<div class="row">
-			<h3>Business News - Coming Soon...</h3>
-			<ul>
-				<li>Links to Newsletters and Special Info Releases</li>
-			</ul>
-		</div>
-		<div class="row">
-			<h3>Employee Education</h3>
-			<ul>
-				<li>Link to request forms for Pamphlet Course and Nutritional Consultant Course - Education Rep. Contact Info</li>
-				<!-- <li>Info coming from <mark>Yvette</mark></li> -->
-			</ul>
-		</div>
-		<div class="row">
-			<h3>Social Media & Branding</h3>
-			<ul>
-				<li>Files containing FB Headers, Social Media Posting Suggestions, National Holidays Calendar, Graphics for Franchisee use</li>
-				<!-- <li>Files coming from <mark>Amera</mark></li> -->
-			</ul>
+			<br>
+			<div class="panel-group" id="accordion">
+				<div class="panel panel-default">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								Business News - Coming Soon...
+								<div class="arrow-down" style="float: right;"></div>
+							</h3>
+						</div>
+					</a>
+					<div id="collapse1" class="panel-collapse collapse in">
+						<div class="panel-body">
+							<ul>
+								<li>Links to Newsletters and Special Info Releases</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								Employee Education
+								<div class="arrow-down" style="float: right;"></div>
+							</h3>
+						</div>
+					</a>
+					<div id="collapse2" class="panel-collapse collapse">
+						<div class="panel-body">
+							<ul>
+								<li>Link to request forms for Pamphlet Course and Nutritional Consultant Course - Education Rep. Contact Info</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+	        					Social Media & Branding
+	        					<div class="arrow-down" style="float: right;"></div>
+	      					</h3>
+						</div>
+					</a>
+					<div id="collapse3" class="panel-collapse collapse">
+						<div class="panel-body">
+							<ul>
+								<li>Files containing FB Headers, Social Media Posting Suggestions, National Holidays Calendar, Graphics for Franchisee use</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 		<hr>
 		<div class="row">
@@ -215,8 +282,9 @@
 		<hr />
 		<script type="text/javascript">
 		$(document).ready(function() {
-			$('#dtIaZ').DataTable();
+			$('.table table-hover').DataTable();
 			dynamicItemsatZero();
+			top20DT();
 		});
 
 		// table populate
@@ -236,6 +304,22 @@
 				]
 			});
 		}
+
+		function top20DT() {
+			$('#top20Sheets').dataTable({
+				"bServerSide": false,
+				"bProcessing": true,
+				"sAjaxDataProp": "feed.entry",
+				"sAjaxSource": "https://spreadsheets.google.com/feeds/list/1sXXp16j4rRpU9shP7vAJs_xScsGL9_qZsmXF33RmaDs/od6/public/values?alt=json",
+				"aoColumns": [
+					{ "mDataProp": "gsx$replaceheaders1.$t" },
+					{ "mDataProp": "gsx$replaceheaders2.$t" },
+					{ "mDataProp": "gsx$replaceheaders3.$t" },
+					{ "mDataProp": "gsx$replaceheaders4.$t" },
+				]
+			});
+		}
+
 
 
 		$(".jumbotron").css({ height: $(window).height() / 3 + "px" });
