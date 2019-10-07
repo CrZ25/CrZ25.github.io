@@ -151,6 +151,7 @@
 		<hr>
 		<div class="row">
 			<h1><mark>TOP 20 ITEMS<mark></h1>
+			<br>
 			<div class="table-responsive">
 				<table id="top20Sheets" class="table table-hover">
 					<thead>
@@ -164,7 +165,25 @@
 		</div>
 		<hr>
 		<div class="row">
+			<h1><mark>SHORT DATED SALE ITEMS<mark></h1>
+			<br>
+			<div class="table-responsive">
+				<table id="shortDateSale" class="table table-hover">
+					<thead>
+						<th class="th-sm">Brand</th>
+						<th class="th-sm">Product #</th>
+						<th class="th-sm">Product Name</th>
+						<th class="th-sm">Expiration Date</th>
+						<th class="th-sm">Discount Price</th>
+						<th class="th-sm">Sales Price</th>
+					</thead>
+				</table>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
 			<h1><mark>ITEMS OUT OF STOCK<mark></h1>
+			<br>
 			<div class="table-responsive">
 				<table id="dtIaZSheets" class="table table-hover">
 					<thead>
@@ -285,6 +304,7 @@
 			$('.table table-hover').DataTable();
 			dynamicItemsatZero();
 			top20DT();
+			shortDateSale();
 		});
 
 		// table populate
@@ -318,11 +338,26 @@
 					{ "mDataProp": "gsx$avgsalespermonth.$t" },
 				],
 				"order": [[3, 'desc']],
-				"pageLength": 20
 			});
 		}
 
+		function shortDateSale() {
+			$('#shortDateSale').dataTable({
+				"bServerSide": false,
+				"bProcessing": true,
+				"sAjaxDataProp": "feed.entry",
+				"sAjaxSource": "https://spreadsheets.google.com/feeds/list/1eDrdinECqPyTyVSakeZOUPcBrXp99ily7qBSahJ398o/od6/public/values?alt=json",
+				"aoColumns": [
+					{ "mDataProp": "gsx$brand.$t" },
+					{ "mDataProp": "gsx$productnumber.$t" },
+					{ "mDataProp": "gsx$productname.$t" },
+					{ "mDataProp": "gsx$expirationdate.$t" },
+					{ "mDataProp": "gsx$discountpercentage.$t" },
+					{ "mDataProp": "gsx$salesprice.$t" },
 
+				],
+			});
+		}				
 
 		$(".jumbotron").css({ height: $(window).height() / 3 + "px" });
 
