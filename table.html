@@ -154,10 +154,10 @@
 			<div class="table-responsive">
 				<table id="top20Sheets" class="table table-hover">
 					<thead>
-						<th class="th-sm">rep1</th>
-						<th class="th-sm">rep2</th>
-						<th class="th-sm">rep3</th>
-						<th class="th-sm">rep4</th>
+						<th class="th-sm">Product #</th>
+						<th class="th-sm">Brand</th>
+						<th class="th-sm">Product Name</th>
+						<th class="th-sm">Avg Sales/Month</th>
 					</thead>
 				</table>
 			</div>
@@ -312,11 +312,12 @@
 				"sAjaxDataProp": "feed.entry",
 				"sAjaxSource": "https://spreadsheets.google.com/feeds/list/1sXXp16j4rRpU9shP7vAJs_xScsGL9_qZsmXF33RmaDs/od6/public/values?alt=json",
 				"aoColumns": [
-					{ "mDataProp": "gsx$replaceheaders1.$t" },
-					{ "mDataProp": "gsx$replaceheaders2.$t" },
-					{ "mDataProp": "gsx$replaceheaders3.$t" },
-					{ "mDataProp": "gsx$replaceheaders4.$t" },
-				]
+					{ "mDataProp": "gsx$productnumber.$t" },
+					{ "mDataProp": "gsx$brand.$t" },
+					{ "mDataProp": "gsx$productname.$t" },
+					{ "mDataProp": "gsx$avgsalespermonth.$t" },
+				],
+				"order": [[3, 'desc']]
 			});
 		}
 
