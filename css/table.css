@@ -8,6 +8,11 @@
 	height: 365px;
 }
 
+.footerimg {
+	background-image: url("../img/EastWest Bioscience/footer.png");
+	margin: 0;
+} 
+
 mark {
 	background-color: rgb(126, 170, 58);
 	color: #FFF;
