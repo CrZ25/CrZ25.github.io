@@ -11,84 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 	<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 	<link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/1902/7765/t/3/assets/favicon.png" />
-	<style type="text/css">
-	.jumbotron {
-		color: white;
-		background-image: url("img/EastWest Bioscience/banner.png");
-		background-position: center;
-		background-color: #fff;
-		background-repeat: no-repeat;
-		background-size: cover;
-		height: 365px;
-	}
-
-	mark {
-		background-color: rgb(126, 170, 58);
-		color: #FFF;
-	}
-
-	hr {
-		margin-top: 1rem;
-		margin-bottom: 1rem;
-		border: 2px solid rgb(126, 170, 58);
-		border-radius: 2px;
-	}
-
-	table.dataTable thead tr {
-		background-color: rgb(126, 170, 58);
-		border-radius: 2px;
-		color: #fff;
-	}
-
-	.dataTables_wrapper .dataTables_paginate .paginate_button.current,
-	.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
-		color: white !important;
-		border: 0;
-		border-radius: 4px;
-		background: rgb(126, 170, 58);
-	}
-
-	.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-		color: black !important;
-		border: 1px solid white;
-		border-radius: 4px;
-
-		background: rgb(126, 170, 58);
-	}
-
-	.dataTables_wrapper .dataTables_filter input {
-		border-radius: 7px;
-		border: 2px solid rgb(126, 170, 58);
-	}
-
-	.dataTables_wrapper .dataTables_filter input:hover {
-		background-color: rgba(126, 170, 58, .2);
-		transition: .2s all ease;
-	}
-
-	.table-hover tbody tr:hover td,
-	.table-hover tbody tr:hover th {
-		background-color: rgba(126, 170, 58, .4);
-		transition: .2s all ease;
-	}
-
-	.panel-heading {
-		background-color: rgb(126, 170, 58);
-	}
-
-	.panel-title {
-		color: #fff;
-	}
-
-	.arrow-down {
-		width: 0;
-		height: 6px;
-		border-left: 6px solid transparent;
-		border-right: 6px solid transparent;
-
-		border-top: 10px solid #fff;
-	}
-	</style>
+	<link rel="stylesheet" type="text/css" href="css/table.css">
 </head>
 
 <body>
@@ -103,52 +26,76 @@
 			<h1 class="display-4" style="line-height: 1.6em;"><mark>WELCOME TO THE SANGSTER’S FRANCHISEE SUPPORT HUB!</mark></h1>
 			<p style="line-height: 1.64em;">This new resource page will be updated frequently. Check back often. If you have a suggestion for information that is not present please email <a href="mailto:support@sangsters.com?Subject=Suggestions%20for%20Information" target="_top" style="color: #000">support@sangsters.com</a>. We want to know what you have to say! Communication is the key to success!</p>
 		</div>
-		<!-- Stocks View -->
-		<!-- 
-		<div class="row">
-			<div class="col">
-				<div class="tradingview-widget-container">
-					<div id="tradingview_3be02"></div>
-					<div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/TSXV-EAST/" rel="noopener" target="_blank"><span class="blue-text">EAST Chart</span></a> by TradingView</div>
-					<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-					<script type="text/javascript">
-					new TradingView.widget({
-						"symbol": "TSXV:EAST",
-						"interval": "D",
-						"timezone": "Etc/UTC",
-						"theme": "Light",
-						"style": "1",
-						"locale": "en",
-						"toolbar_bg": "#f1f3f6",
-						"enable_publishing": false,
-						"container_id": "tradingview_3be02"
-					});
-					</script>
-				</div>
-			</div>
-		</div>
-		-->
 		<hr>
 		<div class="row">
-			<h1><mark>OUR PRODUCTS</mark></h1>
+			<h1><mark>YOUR PRODUCTS</mark></h1>
 		</div>
 		<div class="row">
-			<h3>New Products - Coming Soon...</h3>
-			<ul>
-				<li>Education links.</li>
-			</ul>
-		</div>
-		<div class="row">
-			<h3>New Suppliers - Coming Soon...</h3>
-			<ul>
-				<li>Downloadable pamphlets / flyers in addition to ones currently emailed.</li>
-			</ul>
-		</div>
-		<div class="row">
-			<h3>Franchisee Product Catalogue - Coming Soon...</h3>
-			<ul>
-				<li>Download or order a printed copy.</li>
-			</ul>
+			<div class="panel-group" id="accordion">
+				<h3>New Products & Suppliers</h3>
+				<div class="panel panel-default">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapseA">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								Genuine Health
+								<div class="arrow-down" style="float: right;"></div>
+							</h3>
+						</div>
+					</a>
+					<div id="collapseA" class="panel-collapse collapse">
+						<div class="panel-body">
+							<ul>
+								<li><span class="pdf"></span><a href="" download>AGH Quick Trainer English</a></li>
+								<li><span class="pdf"></span><a href="" download>Clean Collagen Quick Trainer</a></li>
+								<li><span class="pdf"></span><a href="" download>Fermented Organic Vegan Proteins+ Quick Trainer</a></li>
+								<li><span class="pdf"></span><a href="" download>Fogs+ Quick Trainer</a></li>
+								<li><span class="pdf"></span><a href="" download>Customer Product Return Form</a></li>
+								<li><span class="doc"></span><a href="" download>New Account Package October 2018 Final</a></li>
+								<li><span class="pdf"></span><a href="" download>Greens+ Quick Trainer 2018</a></li>
+								<li><span class="pdf"></span><a href="" download>The Complete Approach to Gut Health Quick Trainer</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapseB">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								Le Comptoir
+								<div class="arrow-down" style="float: right;"></div>
+							</h3>
+						</div>
+					</a>
+					<div id="collapseB" class="panel-collapse collapse">
+						<div class="panel-body">
+							<ul>
+								<li><span class="exl"></span><a href="" download>New Account Form</a></li>
+								<li><span class="pdf"></span><a href="" download>Introducing Oil Diffusers</a></li>
+								<li><span class="exl"></span><a href="" download>Order Form</a></li>
+								<li><span class="dli"></span><a href="" download>Image</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapseC">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+	        					Mineral Medex
+	        					<div class="arrow-down" style="float: right;"></div>
+	      					</h3>
+						</div>
+					</a>
+					<div id="collapseC" class="panel-collapse collapse">
+						<div class="panel-body">
+							<ul>
+								<li><span class="pdf"></span><a href="" download>Credit Card Authorization Form</a></li>
+								<li><span class="pdf"></span><a href="" download>New Account Form</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 		<hr>
 		<div class="row">
@@ -199,7 +146,7 @@
 		</div>
 		<hr>
 		<div class="row">
-			<h1><mark>OUR BUSINESS</mark></h1>
+			<h1><mark>YOUR BUSINESS</mark></h1>
 		</div>
 		<div class="row">
 			<br>
@@ -208,15 +155,167 @@
 					<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
 						<div class="panel-heading">
 							<h3 class="panel-title">
-								Business News - Coming Soon...
+								Branding & Social Media
 								<div class="arrow-down" style="float: right;"></div>
 							</h3>
 						</div>
 					</a>
-					<div id="collapse1" class="panel-collapse collapse in">
+					<div id="collapse1" class="panel-collapse collapse">
 						<div class="panel-body">
+							<div class="panel-group" id="accordion">
+								<div class="panel panel-default">
+									<a data-toggle="collapse" data-parent="#accordion" href="#collapseD">
+										<div class="panel-heading">
+											<h3 class="panel-title">
+												Free Use - Holiday Graphics
+												<div class="arrow-down" style="float: right;"></div>
+											</h3>
+										</div>
+									</a>
+									<div id="collapseD" class="panel-collapse collapse">
+										<div class="panel-body">
+											<div class="container">
+												<div class="row">
+													<div class="col">
+														<span class="dli"></span><a href="" download><img src="">1 (3).png</a>
+													</div>
+													<div class="col">
+														<span class="dli"></span><a href="" download><img src="">1 (12).png</a>
+													</div>
+													<div class="col">
+														<span class="dli"></span><a href="" download><img src="">1 (13).png</a>
+													</div>
+												</div>
+											</div>
+											<ul>
+												<li><span class="dli"></span><a href="" download><img src="">1 (3).png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">1 (12).png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">1 (13).png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">1 (14).png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">1 (23).png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">1 (24).png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">1.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">2.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">3.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">4.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">5.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">6.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">7.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">8.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">9.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">10.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">11.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">12.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">13.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">14.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">15.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">16.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">17.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">18.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">19.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">20.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">21.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">22.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">23.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">24.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">25.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">26.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">27.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">28.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">29.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">30.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">31.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">32.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">33.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">34.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">35.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">36.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">37.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">branch (1).png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">branch (2).png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">branch (3).png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">branch (4).png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">branch (5).png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">branch (6).png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">branch (7).png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">branch (8).png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">branch (9).png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">branch (10).png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">branch (11).png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">branch (12).png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">Label Design1.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">Label Design2.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">Label Design3.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">Label Design4.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">Label Design5.png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">lettering (1).png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">lettering (2).png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">lettering (3).png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">lettering (4).png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">lettering (5).png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">lettering (6).png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">lettering (7).png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">MC.ai</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">MC.eps</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">MC.jpg</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">wreath (1).png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">wreath (2).png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">wreath (3).png</a></li>
+												<li><span class="dli"></span><a href="" download><img src="">wreath (4).png</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapseE">
+										<div class="panel-heading">
+											<h3 class="panel-title">
+												Happy Motivational Posters
+												<div class="arrow-down" style="float: right;"></div>
+											</h3>
+										</div>
+									</a>
+								<div id="collapseE" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><span class="dli"></span><a href="" download><img src="">Be Amazing.jpg</a></li>
+											<li><span class="dli"></span><a href="" download><img src="">Be Great.jpg</a></li>
+											<li><span class="dli"></span><a href="" download><img src="">Carpe Diem 1.jpg</a></li>
+											<li><span class="dli"></span><a href="" download><img src="">Carpe Diem 2.jpg</a></li>
+											<li><span class="dli"></span><a href="" download><img src="">Life Is Beautiful.jpg</a></li>
+											<li><span class="dli"></span><a href="" download><img src="">Life Is Perfect.jpg</a></li>
+											<li><span class="dli"></span><a href="" download><img src="">Live Every Moment.jpg</a></li>
+											<li><span class="dli"></span><a href="" download><img src="">Make Things Happen.jpg</a></li>
+											<li><span class="dli"></span><a href="" download><img src="">Never Stop Dreaming.jpg</a></li>
+											<li><span class="dli"></span><a href="" download><img src="">Spring Time 1.jpg</a></li>
+											<li><span class="dli"></span><a href="" download><img src="">Spring Time 2.jpg</a></li>
+											<li><span class="dli"></span><a href="" download><img src="">Sweet Dreams.jpg</a></li>
+											<li><span class="dli"></span><a href="" download><img src="">Thank You 1.jpg</a></li>
+											<li><span class="dli"></span><a href="" download><img src="">Thank You 2.jpg</a></li>
+											<li><span class="dli"></span><a href="" download><img src="">Thank You 3.jpg</a></li>
+											<li><span class="dli"></span><a href="" download><img src="">Thank You 4.jpg</a></li>
+											<li><span class="dli"></span><a href="" download><img src="">Thank You 5.jpg</a></li>
+											<li><span class="dli"></span><a href="" download><img src="">Thank You 6.jpg</a></li>
+											<li><span class="dli"></span><a href="" download><img src="">Thank You 7.jpg</a></li>
+											<li><span class="dli"></span><a href="" download><img src="">Today Is Your Day 1.jpg</a></li>
+											<li><span class="dli"></span><a href="" download><img src="">Today Is Your Day 2.jpg</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<br>
 							<ul>
-								<li>Links to Newsletters and Special Info Releases</li>
+								<li><span class="exl"></span><a href="" download>National Awareness Campaigns</a></li>
+								<li><span class="pdf"></span><a href="" download>30 Day Social Media Content Planner</a></li>
+								<li><span class="pdf"></span><a href="" download>Fall 2019 - Facebook/Instagram Update</a></li>
+								<li><span class="dli"></span><a href="" download>Fall 2019 - Facebook Cover Photo</a></li>
+								<li><span class="dli"></span><a href="" download>News Banner</a></li>
+								<li><span class="dli"></span><a href="" download>Sangsters Logo Square</a></li>
+								<li><span class="pdf"></span><a href="" download>Sangsters Marketing Plan 2019</a></li>
+								<li><span class="dli"></span><a href="" download>Sangsters Logo</a></li>
+								<li><span class="dli"></span><a href="" download>Thank You Image</a></li>
+								<li><span class="dli"></span><a href="" download>Thank You Banner</a></li>
 							</ul>
 						</div>
 					</div>
@@ -338,7 +437,9 @@
 					{ "mDataProp": "gsx$linktoproductinfo.$t" },
 					{ "mDataProp": "gsx$avgsalespermonth.$t" },
 				],
-				"order": [[3, 'desc']],
+				"order": [
+					[3, 'desc']
+				],
 			});
 		}
 
@@ -356,7 +457,7 @@
 					{ "mDataProp": "gsx$discountpercentage.$t" },
 				],
 			});
-		}				
+		}
 
 		$(".jumbotron").css({ height: $(window).height() / 3 + "px" });
 
