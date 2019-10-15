@@ -327,144 +327,149 @@
 		</div>
 		<hr>
 		<div class="row">
-			<h1><mark>ADDITIONAL SUPPORT</mark></h1>
 			<div class="container">
-				<form method="POST" action="https://formspree.io/support@sangsters.com">
-					<div class="form-group">
-						<div class="form-group row">
-							<label class="col-3 col-form-label">Email:</label>
-							<div class="col-9">
-								<input class="form-control" type="email" name="email" placeholder="Your Email">
+				<div class="col-md-9">
+					<h1><mark>ADDITIONAL SUPPORT</mark></h1>
+					<form method="POST" action="https://formspree.io/support@sangsters.com">
+						<div class="form-group">
+							<div class="form-group row">
+								<label class="col-3 col-form-label">Email:</label>
+								<div class="col-9">
+									<input class="form-control" type="email" name="email" placeholder="Your Email">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-3 col-form-label">Inquiry:</label>
+								<div class="col-9">
+									<textarea class="form-control" name="message" placeholder="Request for Additional Support"></textarea>
+								</div>
+							</div>
+							<div class="form-group" row>
+								<button class="btn btn-primary" type="submit" style="background-color: rgb(126, 170, 58); border: 0;">Send Request</button>
 							</div>
 						</div>
-						<div class="form-group row">
-							<label class="col-3 col-form-label">Inquiry:</label>
-							<div class="col-9">
-								<textarea class="form-control" name="message" placeholder="Request for Additional Support"></textarea>
-							</div>
-						</div>
-						<div class="form-group" row>
-							<button class="btn btn-primary" type="submit" style="background-color: rgb(126, 170, 58); border: 0;">Send Request</button>
-						</div>
-					</div>
-				</form>
+					</form>
+				</div>
+				<div class="col-md-3">
+					<img src="img/EastWest Bioscience/flower.png" style="max-width: 100%;">
+				</div>
+				</div>
 			</div>
-		</div>
-		<hr>
-		<div class="row">
-			<h3><mark>CONTACT US<mark></h3>
-			<p>Please send all requests to <a href="mailto:support@sangsters.com">support@sangsters.com</a> Your email will be acknowledged and sent to the appropriate recipient. Please place a Keyword containing the focus of your email in the subject line, ie. ACCOUNTING, POS, CO-OP, SUPPORT, MARKETING, SALES, SHIPPING, STOCK. If you require immediate assistance please do not hesitate to contact us via phone at <a href="tel:2507701963">250-770-1963</a>. Thank you.</p>
-			<table class="table table-hover">
-				<thead>
-					<th>Department</th>
-					<th>Name</th>
-					<th>Email</th>
-				</thead>
-				<tr>
-					<th>Support</th>
-					<td>Arran</td>
-					<td><a href="mailto:support@sangsters.com">support@sangsters.com</a></td>
-				</tr>
-			</table>
-		</div>
-		<hr />
-		<script type="text/javascript">
-		$(document).ready(function() {
-			$('.table table-hover').DataTable();
-			tablePopulate();
-		});
-
-		// table populate
-		function tablePopulate() {
-			dynamicItemsatZero();
-			top20DT();
-			shortDateSale();
-
-			// html ID, Google Spreadsheet ID
-			dtFilesDownload("#dtYBOperations", "188Pg2pA0xgRTWhb0EkZp0uotN38PWgL6uG5MgR_INBw");
-			dtFilesDownload("#dtYBsocialmedianBranding", "1B93hCN5Hmo90TOw4oiv0Xe6m5Ek9srzid2NUw5tbJsU");
-			dtFilesDownload("#dtYBsocialmediaFreeUse", "1rh_BzkUaNRBQEP4ai0I3itcMST2XzQprhtLUKI03UhY");
-			dtFilesDownload("#dtYBsocialmediaHappyPoster", "1r3IWGZ9IuUoXwpkYRFbEZxsfxRTPeaXyp5-WNISjwdk");
-			dtFilesDownload("#dtYBEducationCertification", "1KYrwnSudZhidmC7C5s7D-VdiXzvMn2SFvjBxukJdtH8");
-			dtFilesDownload("#dtYBFormsDocuments", "1Ce7XziYZHqYEP_L0vVSkf2GnPofdhTIKKlphCIDzX6c");
-			dtFilesDownload("#dtYBNews", "1P764jsiqX5o0hx6-PRmmgmIDnVGyeU2_rWGBcHiXzvI");
-			dtFilesDownload("#dtYPGenuineHealth", "13X3KEwI-b44D2OPWPSbhXESXI0nzhecvTTPVLatihfQ");
-			dtFilesDownload("#dtYPMineralMedex", "13BLB3KCi9mJt_6bfMC6r8SX81RZgCjmobczOjL_T4Uk");
-			dtFilesDownload("#dtYPLeComptoir", "1WwR3nehN1_mMIcxKhubW8WQpINwCCLN0oHIWUT0FYMc");
-		}
-
-		// https://datatables.net/forums/discussion/5611/how-to-grab-datatables-data-from-a-google-spreadsheet
-		function dynamicItemsatZero() {
-			$('#dtIaZSheets').dataTable({
-				"bServerSide": false,
-				"bProcessing": true,
-				"sAjaxDataProp": "feed.entry",
-				"sAjaxSource": "https://spreadsheets.google.com/feeds/list/1ysewTzEqXZcb4V7nwxejoWtmzJfnZP2G8rNvOiyqPUc/od6/public/values?alt=json",
-				"aoColumns": [
-					{ "mDataProp": "gsx$sku.$t" },
-					{ "mDataProp": "gsx$name.$t" },
-					{ "mDataProp": "gsx$status.$t" },
-					{ "mDataProp": "gsx$availabilitytime.$t" },
-					{ "mDataProp": "gsx$details.$t" }
-				]
+			<hr>
+			<div class="row">
+				<h3><mark>CONTACT US<mark></h3>
+				<p>Please send all requests to <a href="mailto:support@sangsters.com">support@sangsters.com</a> Your email will be acknowledged and sent to the appropriate recipient. Please place a Keyword containing the focus of your email in the subject line, ie. ACCOUNTING, POS, CO-OP, SUPPORT, MARKETING, SALES, SHIPPING, STOCK. If you require immediate assistance please do not hesitate to contact us via phone at <a href="tel:2507701963">250-770-1963</a>. Thank you.</p>
+				<table class="table table-hover">
+					<thead>
+						<th>Department</th>
+						<th>Name</th>
+						<th>Email</th>
+					</thead>
+					<tr>
+						<th>Support</th>
+						<td>Arran</td>
+						<td><a href="mailto:support@sangsters.com">support@sangsters.com</a></td>
+					</tr>
+				</table>
+			</div>
+			<hr />
+			<script type="text/javascript">
+			$(document).ready(function() {
+				$('.table table-hover').DataTable();
+				tablePopulate();
 			});
-		}
 
-		function top20DT() {
-			$('#top20Sheets').dataTable({
-				"bServerSide": false,
-				"bProcessing": true,
-				"sAjaxDataProp": "feed.entry",
-				"sAjaxSource": "https://spreadsheets.google.com/feeds/list/1sXXp16j4rRpU9shP7vAJs_xScsGL9_qZsmXF33RmaDs/od6/public/values?alt=json",
-				"aoColumns": [
-					{ "mDataProp": "gsx$productnumber.$t" },
-					{ "mDataProp": "gsx$brand.$t" },
-					{ "mDataProp": "gsx$linktoproductinfo.$t" },
-					{ "mDataProp": "gsx$avgsalespermonth.$t" },
-				],
-				"order": [
-					[3, 'desc']
-				],
-			});
-		}
+			// table populate
+			function tablePopulate() {
+				dynamicItemsatZero();
+				top20DT();
+				shortDateSale();
 
-		function shortDateSale() {
-			$('#shortDateSale').dataTable({
-				"bServerSide": false,
-				"bProcessing": true,
-				"sAjaxDataProp": "feed.entry",
-				"sAjaxSource": "https://spreadsheets.google.com/feeds/list/1eDrdinECqPyTyVSakeZOUPcBrXp99ily7qBSahJ398o/od6/public/values?alt=json",
-				"aoColumns": [
-					{ "mDataProp": "gsx$brand.$t" },
-					{ "mDataProp": "gsx$productnumber.$t" },
-					{ "mDataProp": "gsx$productname.$t" },
-					{ "mDataProp": "gsx$expirationdate.$t" },
-					{ "mDataProp": "gsx$discountpercentage.$t" },
-				],
-			});
-		}
+				// html ID, Google Spreadsheet ID
+				dtFilesDownload("#dtYBOperations", "188Pg2pA0xgRTWhb0EkZp0uotN38PWgL6uG5MgR_INBw");
+				dtFilesDownload("#dtYBsocialmedianBranding", "1B93hCN5Hmo90TOw4oiv0Xe6m5Ek9srzid2NUw5tbJsU");
+				dtFilesDownload("#dtYBsocialmediaFreeUse", "1rh_BzkUaNRBQEP4ai0I3itcMST2XzQprhtLUKI03UhY");
+				dtFilesDownload("#dtYBsocialmediaHappyPoster", "1r3IWGZ9IuUoXwpkYRFbEZxsfxRTPeaXyp5-WNISjwdk");
+				dtFilesDownload("#dtYBEducationCertification", "1KYrwnSudZhidmC7C5s7D-VdiXzvMn2SFvjBxukJdtH8");
+				dtFilesDownload("#dtYBFormsDocuments", "1Ce7XziYZHqYEP_L0vVSkf2GnPofdhTIKKlphCIDzX6c");
+				dtFilesDownload("#dtYBNews", "1P764jsiqX5o0hx6-PRmmgmIDnVGyeU2_rWGBcHiXzvI");
+				dtFilesDownload("#dtYPGenuineHealth", "13X3KEwI-b44D2OPWPSbhXESXI0nzhecvTTPVLatihfQ");
+				dtFilesDownload("#dtYPMineralMedex", "13BLB3KCi9mJt_6bfMC6r8SX81RZgCjmobczOjL_T4Uk");
+				dtFilesDownload("#dtYPLeComptoir", "1WwR3nehN1_mMIcxKhubW8WQpINwCCLN0oHIWUT0FYMc");
+			}
 
-		function dtFilesDownload(className, url) {
-			$(className).dataTable({
-				"bServerSide": false,
-				"bProcessing": true,
-				"sAjaxDataProp": "feed.entry",
-				"sAjaxSource": "https://spreadsheets.google.com/feeds/list/" + url + "/od6/public/values?alt=json",
-				"aoColumns": [
-					{ "mDataProp": "gsx$filename.$t" },
-					{ "mDataProp": "gsx$docutype.$t" },
-					{ "mDataProp": "gsx$downloadlink.$t" },
-				],
-			});
-		}
+			// https://datatables.net/forums/discussion/5611/how-to-grab-datatables-data-from-a-google-spreadsheet
+			function dynamicItemsatZero() {
+				$('#dtIaZSheets').dataTable({
+					"bServerSide": false,
+					"bProcessing": true,
+					"sAjaxDataProp": "feed.entry",
+					"sAjaxSource": "https://spreadsheets.google.com/feeds/list/1ysewTzEqXZcb4V7nwxejoWtmzJfnZP2G8rNvOiyqPUc/od6/public/values?alt=json",
+					"aoColumns": [
+						{ "mDataProp": "gsx$sku.$t" },
+						{ "mDataProp": "gsx$name.$t" },
+						{ "mDataProp": "gsx$status.$t" },
+						{ "mDataProp": "gsx$availabilitytime.$t" },
+						{ "mDataProp": "gsx$details.$t" }
+					]
+				});
+			}
 
-		$(".jumbotron").css({ height: $(window).height() / 3 + "px" });
+			function top20DT() {
+				$('#top20Sheets').dataTable({
+					"bServerSide": false,
+					"bProcessing": true,
+					"sAjaxDataProp": "feed.entry",
+					"sAjaxSource": "https://spreadsheets.google.com/feeds/list/1sXXp16j4rRpU9shP7vAJs_xScsGL9_qZsmXF33RmaDs/od6/public/values?alt=json",
+					"aoColumns": [
+						{ "mDataProp": "gsx$productnumber.$t" },
+						{ "mDataProp": "gsx$brand.$t" },
+						{ "mDataProp": "gsx$linktoproductinfo.$t" },
+						{ "mDataProp": "gsx$avgsalespermonth.$t" },
+					],
+					"order": [
+						[3, 'desc']
+					],
+				});
+			}
 
-		$(window).on("resize", function() {
+			function shortDateSale() {
+				$('#shortDateSale').dataTable({
+					"bServerSide": false,
+					"bProcessing": true,
+					"sAjaxDataProp": "feed.entry",
+					"sAjaxSource": "https://spreadsheets.google.com/feeds/list/1eDrdinECqPyTyVSakeZOUPcBrXp99ily7qBSahJ398o/od6/public/values?alt=json",
+					"aoColumns": [
+						{ "mDataProp": "gsx$brand.$t" },
+						{ "mDataProp": "gsx$productnumber.$t" },
+						{ "mDataProp": "gsx$productname.$t" },
+						{ "mDataProp": "gsx$expirationdate.$t" },
+						{ "mDataProp": "gsx$discountpercentage.$t" },
+					],
+				});
+			}
+
+			function dtFilesDownload(className, url) {
+				$(className).dataTable({
+					"bServerSide": false,
+					"bProcessing": true,
+					"sAjaxDataProp": "feed.entry",
+					"sAjaxSource": "https://spreadsheets.google.com/feeds/list/" + url + "/od6/public/values?alt=json",
+					"aoColumns": [
+						{ "mDataProp": "gsx$filename.$t" },
+						{ "mDataProp": "gsx$docutype.$t" },
+						{ "mDataProp": "gsx$downloadlink.$t" },
+					],
+				});
+			}
+
 			$(".jumbotron").css({ height: $(window).height() / 3 + "px" });
-		});
-		</script>
-	</div>
+
+			$(window).on("resize", function() {
+				$(".jumbotron").css({ height: $(window).height() / 3 + "px" });
+			});
+			</script>
+		</div>
 </body>
 <footer>
 	<div class="container-fluid">
