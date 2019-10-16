@@ -14,8 +14,9 @@
 } 
 
 mark {
-	background-color: rgb(126, 170, 58);
-	color: #FFF;
+	/*background-color: rgb(126, 170, 58);*/
+	color: #000;
+	font-weight: 800;
 }
 
 hr {
