@@ -57,6 +57,10 @@ table.dataTable thead tr {
 	transition: .2s all ease;
 }
 
+.table {
+	width: 100%;
+}
+
 .table-hover tbody tr:hover td,
 .table-hover tbody tr:hover th {
 	background-color: rgba(126, 170, 58, .4);
