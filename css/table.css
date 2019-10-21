@@ -63,6 +63,17 @@ table.dataTable thead tr {
 	background-color: rgba(126, 170, 58, .4);
 	transition: .2s all ease;
 }
+.panel-default {
+	text-align: center;
+	margin:  auto;
+	width: 75%;
+}
+
+.panel-default-NP {
+	width: 100%;
+	text-align: center;
+	margin:  auto;
+}
 
 .panel-heading {
 	background-color: rgb(126, 170, 58);
