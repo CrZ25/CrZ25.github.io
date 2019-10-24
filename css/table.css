@@ -11,7 +11,7 @@
 .footerimg {
 	background-image: url("../img/EastWest Bioscience/footer.png");
 	margin: 0;
-} 
+}
 
 mark {
 	/*background-color: rgb(126, 170, 58);*/
@@ -63,16 +63,17 @@ table.dataTable thead tr {
 	background-color: rgba(126, 170, 58, .4);
 	transition: .2s all ease;
 }
+
 .panel-default {
 	text-align: center;
-	margin:  auto;
+	margin: auto;
 	width: 80%;
 }
 
 .panel-default-NP {
 	width: 100%;
 	text-align: center;
-	margin:  auto;
+	margin: auto;
 }
 
 .panel-heading {
@@ -90,4 +91,41 @@ table.dataTable thead tr {
 	border-right: 6px solid transparent;
 
 	border-top: 10px solid #fff;
+}
+
+.card {
+	width: 80%;
+	margin: auto;
+	flex: 1 1 auto;
+	border: 2px rgb(126, 170, 58) solid;
+	border-radius: 7px;
+}
+.card-body {
+	margin: 1em;
+}
+.card-header {
+	text-decoration: none;
+	background-color: rgb(126, 170, 58);
+	padding: 0.75rem 1.25rem;
+	margin-bottom: 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.mb-0>a {
+	color: white;
+	display: block;
+	position: relative;
+}
+
+.mb-0>a:after {
+	content: "\f078";
+	/* fa-chevron-down */
+	font-family: 'FontAwesome';
+	position: absolute;
+	right: 0;
+}
+
+.mb-0>a[aria-expanded="true"]:after {
+	content: "\f077";
+	/* fa-chevron-up */
 }

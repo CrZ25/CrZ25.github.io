@@ -1,63 +1,352 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<title>Sangster's Support Hub</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
-	<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-	<link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/1902/7765/t/3/assets/favicon.png" />
-	<link rel="stylesheet" type="text/css" href="css/table.css">
-</head>
+	<head>
+		<title>Sangster's Support Hub</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+		<link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/1902/7765/t/3/assets/favicon.png" />
+		<link rel="stylesheet" type="text/css" href="css/table.css">
+	</head>
 
-<body>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="jumbotron jumbotron-fluid">
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="jumbotron jumbotron-fluid">
+				</div>
 			</div>
 		</div>
-	</div>
-	<div class="container">
-		<div class="row">
-			<h1 class="display-4 marked" style="line-height: 1.6em;">WELCOME TO THE SANGSTER'S SUPPORT HUB!</h1>
-			<p style="line-height: 1.64em;">This new resource page will be updated frequently. Check back often. If you have a suggestion for information that is not present please email <a href="mailto:support@sangsters.com?Subject=Suggestions%20for%20Information" target="_top" style="color: #000">support@sangsters.com</a>. We want to know what you have to say! Communication is the key to success!</p>
-		</div>
-		<hr>
-		<div class="row">
-			<h1 class="marked">MARKETING &amp; SELLING TOOLS</h1>
-		</div>
-		<div class="row">
-			<br>
-			<div class="panel-group" id="accordion">
-				<div class="panel panel-default">
-					<a data-toggle="collapse" data-parent="#accordion" href="#collapse111">
-						<div class="panel-heading">
-							<h3 class="panel-title">
-								Branding &amp; Social Media
-								<span class="arrow-down" style="float: right;"></span>
-							</h3>
+		<div class="container">
+			<div class="row">
+				<h1 class="display-4 marked" style="line-height: 1.6em;">WELCOME TO THE SANGSTER'S SUPPORT HUB!</h1>
+				<p style="line-height: 1.64em;">This new resource page will be updated frequently. Check back often. If you have a suggestion for information that is not present please email <a href="mailto:support@sangsters.com?Subject=Suggestions%20for%20Information" target="_top" style="color: #000">support@sangsters.com</a>. We want to know what you have to say! Communication is the key to success!</p>
+			</div>
+			<hr>
+			<div class="row">
+				<h1>MARKETING &amp; SELLING TOOLS</h1>
+				<div id="accordion">
+					<div class="card">
+						<div class="card-header" id="heading-2">
+							<h5 class="mb-0">
+								<a class="collapsed" role="button" data-toggle="collapse" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+									Operations Manual
+								</a>
+							</h5>
 						</div>
-					</a>
-					<div id="collapse111" class="panel-collapse collapse">
-						<div class="panel-body">
-							<div class="panel-group" id="accordion">
+						<div id="collapse-2" class="collapse" data-parent="#accordion" aria-labelledby="heading-2">
+							<div class="card-body">
+								<div class="table-responsive">
+									<table id="dtYBOperations" class="table table-hover" style="width:100%">
+										<thead>
+											<tr>
+												<th class="th-sm">File</th>
+												<th class="th-sm">Type</th>
+												<th class="th-sm">Download Link</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header" id="heading-1">
+							<h5 class="mb-0">
+								<a role="button" data-toggle="collapse" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+									Forms &amp; Documents
+								</a>
+							</h5>
+						</div>
+						<div id="collapse-1" class="collapse" data-parent="#accordion" aria-labelledby="heading-1">
+							<div class="card-body">
+								<div id="accordion-1">
+									<div class="card">
+										<div class="card-header" id="heading-1-1">
+											<h5 class="mb-0">
+												<a class="collapsed" role="button" data-toggle="collapse" href="#collapse-1-1" aria-expanded="false" aria-controls="collapse-1-1">
+													New Employee Forms
+												</a>
+											</h5>
+										</div>
+										<div id="collapse-1-1" class="collapse" data-parent="#accordion-1" aria-labelledby="heading-1-1">
+											<div class="card-body">
+												New Employee Forms Data
+											</div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header" id="heading-1-2">
+											<h5 class="mb-0">
+												<a class="collapsed" role="button" data-toggle="collapse" href="#collapse-1-2" aria-expanded="false" aria-controls="collapse-1-2">
+													Co-op Forms
+												</a>
+											</h5>
+										</div>
+										<div id="collapse-1-2" class="collapse" data-parent="#accordion-1" aria-labelledby="heading-1-2">
+											<div class="card-body">
+												Co-op Forms Data
+											</div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header" id="heading-1-3">
+											<h5 class="mb-0">
+												<a class="collapsed" role="button" data-toggle="collapse" href="#collapse-1-3" aria-expanded="false" aria-controls="collapse-1-3">
+													Business Essentials
+												</a>
+											</h5>
+										</div>
+										<div id="collapse-1-3" class="collapse" data-parent="#accordion-1" aria-labelledby="heading-1-3">
+											<div class="card-body">
+												Business Essentials Data
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<h1>OPERATIONAL TOOLS</h1>
+				<div id="accordion2">
+					<div class="card">
+						<div class="card-header" id="heading-4">
+							<h5 class="mb-0">
+								<a class="collapsed" role="button" data-toggle="collapse" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+									News
+								</a>
+							</h5>
+						</div>
+						<div id="collapse-4" class="collapse" data-parent="#accordion2" aria-labelledby="heading-4">
+							<div class="card-body">
+								News Data
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header" id="heading-5">
+							<h5 class="mb-0">
+								<a role="button" data-toggle="collapse" href="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+									Branding &amp; Social Media
+								</a>
+							</h5>
+						</div>
+						<div id="collapse-5" class="collapse" data-parent="#accordion2" aria-labelledby="heading-5">
+							<div class="card-body">
+								<div id="accordion-2">
+									<div class="card">
+										<div class="card-header" id="heading-5-1">
+											<h5 class="mb-0">
+												<a class="collapsed" role="button" data-toggle="collapse" href="#collapse-5-1" aria-expanded="false" aria-controls="collapse-5-1">
+													October - Fall Sale
+												</a>
+											</h5>
+										</div>
+										<div id="collapse-5-1" class="collapse" data-parent="#accordion-2" aria-labelledby="heading-5-1">
+											<div class="card-body">
+												October - Fall Sale Data
+											</div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header" id="heading-5-2">
+											<h5 class="mb-0">
+												<a class="collapsed" role="button" data-toggle="collapse" href="#collapse-5-2" aria-expanded="false" aria-controls="collapse-5-2">
+													November - Movember Prostate Awareness Month
+												</a>
+											</h5>
+										</div>
+										<div id="collapse-5-2" class="collapse" data-parent="#accordion-2" aria-labelledby="heading-5-2">
+											<div class="card-body">
+												November - Movember Prostate Awareness Month Data
+											</div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header" id="heading-5-3">
+											<h5 class="mb-0">
+												<a class="collapsed" role="button" data-toggle="collapse" href="#collapse-5-3" aria-expanded="false" aria-controls="collapse-5-3">
+													December - Holiday Graphics
+												</a>
+											</h5>
+										</div>
+										<div id="collapse-5-3" class="collapse" data-parent="#accordion-2" aria-labelledby="heading-5-3">
+											<div class="card-body">
+												December - Holiday Graphics Data
+											</div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header" id="heading-5-4">
+											<h5 class="mb-0">
+												<a class="collapsed" role="button" data-toggle="collapse" href="#collapse-5-4" aria-expanded="false" aria-controls="collapse-5-4">
+													Multi Use Graphics
+												</a>
+											</h5>
+										</div>
+										<div id="collapse-5-4" class="collapse" data-parent="#accordion-2" aria-labelledby="heading-5-4">
+											<div class="card-body">
+												Multi Use Graphics Data
+											</div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header" id="heading-5-5">
+											<h5 class="mb-0">
+												<a class="collapsed" role="button" data-toggle="collapse" href="#collapse-5-5" aria-expanded="false" aria-controls="collapse-5-5">
+													Logos &amp; Headers
+												</a>
+											</h5>
+										</div>
+										<div id="collapse-5-5" class="collapse" data-parent="#accordion-2" aria-labelledby="heading-5-5">
+											<div class="card-body">
+												Logos &amp; Headers Data
+											</div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header" id="heading-5-6">
+											<h5 class="mb-0">
+												<a class="collapsed" role="button" data-toggle="collapse" href="#collapse-5-6" aria-expanded="false" aria-controls="collapse-5-6">
+													Social Media Support
+												</a>
+											</h5>
+										</div>
+										<div id="collapse-5-6" class="collapse" data-parent="#accordion-2" aria-labelledby="heading-5-6">
+											<div class="card-body">
+												Social Media Support Data
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header" id="heading-6">
+							<h5 class="mb-0">
+								<a class="collapsed" role="button" data-toggle="collapse" href="#collapse-6" aria-expanded="false" aria-controls="collapse-6">
+									Education &amp; Certification
+								</a>
+							</h5>
+						</div>
+						<div id="collapse-6" class="collapse" data-parent="#accordion2" aria-labelledby="heading-6">
+							<div class="card-body">
+								Education &amp; Certification Data
+							</div>
+						</div>
+					</div>
+				</div>
+				<h1>PRODUCTS &amp; VENDORS</h1>
+				<div id="accordion">
+					<div class="card">
+						<div class="card-header" id="heading-7">
+							<h5 class="mb-0">
+								<a class="collapsed" role="button" data-toggle="collapse" href="#collapse-7" aria-expanded="false" aria-controls="collapse-7">
+									Genuine Health
+								</a>
+							</h5>
+						</div>
+						<div id="collapse-7" class="collapse" data-parent="#accordion" aria-labelledby="heading-7">
+							<div class="card-body">
+								Genuine Health Data
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header" id="heading-8">
+							<h5 class="mb-0">
+								<a class="collapsed" role="button" data-toggle="collapse" href="#collapse-8" aria-expanded="false" aria-controls="collapse-8">
+									Mineral Medex
+								</a>
+							</h5>
+						</div>
+						<div id="collapse-8" class="collapse" data-parent="#accordion" aria-labelledby="heading-8">
+							<div class="card-body">
+								Mineral Medex Data
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header" id="heading-9">
+							<h5 class="mb-0">
+								<a class="collapsed" role="button" data-toggle="collapse" href="#collapse-9" aria-expanded="false" aria-controls="collapse-9">
+									Le Comptoir
+								</a>
+							</h5>
+						</div>
+						<div id="collapse-9" class="collapse" data-parent="#accordion" aria-labelledby="heading-9">
+							<div class="card-body">
+								Le Comptoir Data
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<h1 class="marked">MARKETING &amp; SELLING TOOLS</h1>
+			</div>
+			<div class="row">
+				<br>
+				<div class="panel-group" id="accordion">
+					<div class="panel panel-default">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse111">
+							<div class="panel-heading">
+								<h3 class="panel-title">
+									Branding &amp; Social Media
+									<span class="arrow-down" style="float: right;"></span>
+								</h3>
+							</div>
+						</a>
+						<div id="collapse111" class="panel-collapse collapse">
+							<div class="panel-body">
+								<div class="panel-group" id="accordion">
+									<div class="panel panel-default">
+										<a data-toggle="collapse" data-parent="#accordion1" href="#collapse1D">
+											<div class="panel-heading">
+												<h3 class="panel-title">
+													Free Use - Holiday Graphics
+													<span class="arrow-down" style="float: right;"></span>
+												</h3>
+											</div>
+										</a>
+										<div id="collapse1D" class="panel-collapse collapse">
+											<div class="panel-body">
+												<div class="table-responsive">
+													<table id="dtYBsocialmediaFreeUse" class="table table-hover" style="width:100%">
+														<thead>
+															<tr>
+																<th class="th-sm">File</th>
+																<th class="th-sm">Type</th>
+																<th class="th-sm">Download Link</th>
+															</tr>
+														</thead>
+													</table>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 								<div class="panel panel-default">
-									<a data-toggle="collapse" data-parent="#accordion1" href="#collapse1D">
+									<a data-toggle="collapse" data-parent="#accordion2" href="#collapseE">
 										<div class="panel-heading">
 											<h3 class="panel-title">
-												Free Use - Holiday Graphics
+												Happy Motivational Posters
 												<span class="arrow-down" style="float: right;"></span>
 											</h3>
 										</div>
 									</a>
-									<div id="collapse1D" class="panel-collapse collapse">
+									<div id="collapseE" class="panel-collapse collapse">
 										<div class="panel-body">
 											<div class="table-responsive">
-												<table id="dtYBsocialmediaFreeUse" class="table table-hover" style="width:100%">
+												<table id="dtYBsocialmediaHappyPoster" class="table table-hover" style="width:100%">
 													<thead>
 														<tr>
 															<th class="th-sm">File</th>
@@ -71,35 +360,65 @@
 									</div>
 								</div>
 							</div>
-							<div class="panel panel-default">
-								<a data-toggle="collapse" data-parent="#accordion2" href="#collapseE">
-										<div class="panel-heading">
-											<h3 class="panel-title">
-												Happy Motivational Posters
-												<span class="arrow-down" style="float: right;"></span>
-											</h3>
-										</div>
-									</a>
-								<div id="collapseE" class="panel-collapse collapse">
-									<div class="panel-body">
-										<div class="table-responsive">
-											<table id="dtYBsocialmediaHappyPoster" class="table table-hover" style="width:100%">
-												<thead>
-													<tr>
-														<th class="th-sm">File</th>
-														<th class="th-sm">Type</th>
-														<th class="th-sm">Download Link</th>
-													</tr>
-												</thead>
-											</table>
-										</div>
-									</div>
+							<div class="panel-body">
+								<div class="table-responsive">
+									<table id="dtYBsocialmedianBranding" class="table table-hover" style="width:100%">
+										<thead>
+											<tr>
+												<th class="th-sm">File</th>
+												<th class="th-sm">Type</th>
+												<th class="th-sm">Download Link</th>
+											</tr>
+										</thead>
+									</table>
 								</div>
 							</div>
 						</div>
+					</div>
+					<div class="panel panel-default">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+							<div class="panel-heading">
+								<h3 class="panel-title">
+									Education &amp; Training
+									<span class="arrow-down" style="float: right;"></span>
+								</h3>
+							</div>
+						</a>
+						<div id="collapse2" class="panel-collapse collapse">
+							<div class="panel-body">
+								<div class="table-responsive">
+									<table id="dtYBEducationCertification" class="table table-hover" style="width:100%">
+										<thead>
+											<tr>
+												<th class="th-sm">File</th>
+												<th class="th-sm">Type</th>
+												<th class="th-sm">Download Link</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<h1 class="marked">OPERATIONAL TOOLS</h1>
+			</div>
+			<div class="row">
+				<div class="panel panel-default">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapseZ">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								News
+								<span class="arrow-down" style="float: right;"></span>
+							</h3>
+						</div>
+					</a>
+					<div id="collapseZ" class="panel-collapse collapse">
 						<div class="panel-body">
 							<div class="table-responsive">
-								<table id="dtYBsocialmedianBranding" class="table table-hover" style="width:100%">
+								<table id="dtYBNews" class="table table-hover" style="width:100%">
 									<thead>
 										<tr>
 											<th class="th-sm">File</th>
@@ -113,18 +432,43 @@
 					</div>
 				</div>
 				<div class="panel panel-default">
-					<a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapseY">
 						<div class="panel-heading">
 							<h3 class="panel-title">
-								Education &amp; Training
+								Forms &amp; Documents
 								<span class="arrow-down" style="float: right;"></span>
 							</h3>
 						</div>
 					</a>
-					<div id="collapse2" class="panel-collapse collapse">
+					<div id="collapseY" class="panel-collapse collapse">
 						<div class="panel-body">
 							<div class="table-responsive">
-								<table id="dtYBEducationCertification" class="table table-hover" style="width:100%">
+								<table id="dtYBFormsDocuments" class="table table-hover" style="width:100%">
+									<thead>
+										<tr>
+											<th class="th-sm">File</th>
+											<th class="th-sm">Type</th>
+											<th class="th-sm">Download Link</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapseF">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								Operations Manual
+								<span class="arrow-down" style="float: right;"></span>
+							</h3>
+						</div>
+					</a>
+					<div id="collapseF" class="panel-collapse collapse">
+						<div class="panel-body">
+							<div class="table-responsive">
+								<table id="dtYBOperations" class="table table-hover" style="width:100%">
 									<thead>
 										<tr>
 											<th class="th-sm">File</th>
@@ -138,265 +482,184 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="row">
-			<h1 class="marked">OPERATIONAL TOOLS</h1>
-		</div>
-		<div class="row">
-			<div class="panel panel-default">
-				<a data-toggle="collapse" data-parent="#accordion" href="#collapseZ">
-						<div class="panel-heading">
-							<h3 class="panel-title">
-								News
-								<span class="arrow-down" style="float: right;"></span>
-							</h3>
-						</div>
-					</a>
-				<div id="collapseZ" class="panel-collapse collapse">
-					<div class="panel-body">
-						<div class="table-responsive">
-							<table id="dtYBNews" class="table table-hover" style="width:100%">
-								<thead>
-									<tr>
-										<th class="th-sm">File</th>
-										<th class="th-sm">Type</th>
-										<th class="th-sm">Download Link</th>
-									</tr>
-								</thead>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="panel panel-default">
-				<a data-toggle="collapse" data-parent="#accordion" href="#collapseY">
-						<div class="panel-heading">
-							<h3 class="panel-title">
-								Forms &amp; Documents
-								<span class="arrow-down" style="float: right;"></span>
-							</h3>
-						</div>
-					</a>
-				<div id="collapseY" class="panel-collapse collapse">
-					<div class="panel-body">
-						<div class="table-responsive">
-							<table id="dtYBFormsDocuments" class="table table-hover" style="width:100%">
-								<thead>
-									<tr>
-										<th class="th-sm">File</th>
-										<th class="th-sm">Type</th>
-										<th class="th-sm">Download Link</th>
-									</tr>
-								</thead>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="panel panel-default">
-				<a data-toggle="collapse" data-parent="#accordion" href="#collapseF">
-						<div class="panel-heading">
-							<h3 class="panel-title">
-								Operations Manual
-								<span class="arrow-down" style="float: right;"></span>
-							</h3>
-						</div>
-					</a>
-				<div id="collapseF" class="panel-collapse collapse">
-					<div class="panel-body">
-						<div class="table-responsive">
-							<table id="dtYBOperations" class="table table-hover" style="width:100%">
-								<thead>
-									<tr>
-										<th class="th-sm">File</th>
-										<th class="th-sm">Type</th>
-										<th class="th-sm">Download Link</th>
-									</tr>
-								</thead>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<h1 class="marked">PRODUCTS &amp; VENDORS</h1>
-		</div>
-		<div class="row">
 			<div class="row">
-				<div class="panel-group" id="accordion">
-					<div class="panel panel-default">
-						<a data-toggle="collapse" data-parent="#accordion" href="#collapseA">
-						<div class="panel-heading">
-							<h3 class="panel-title">
-								Genuine Health
-								<span class="arrow-down" style="float: right;"></span>
-							</h3>
-						</div>
-					</a>
-						<div id="collapseA" class="panel-collapse collapse">
-							<div class="panel-body">
-								<div class="table-responsive">
-									<table id="dtYPGenuineHealth" class="table table-hover" style="width:100%">
-										<thead>
-											<tr>
-												<th class="th-sm">File</th>
-												<th class="th-sm">Type</th>
-												<th class="th-sm">Download Link</th>
-											</tr>
-										</thead>
-									</table>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="panel panel-default">
-						<a data-toggle="collapse" data-parent="#accordion" href="#collapseB">
-						<div class="panel-heading">
-							<h3 class="panel-title">
-								Mineral Medex
-								<span class="arrow-down" style="float: right;"></span>
-							</h3>
-						</div>
-					</a>
-						<div id="collapseB" class="panel-collapse collapse">
-							<div class="panel-body">
-								<div class="table-responsive">
-									<table id="dtYPMineralMedex" class="table table-hover" style="width:100%">
-										<thead>
-											<tr>
-												<th class="th-sm">File</th>
-												<th class="th-sm">Type</th>
-												<th class="th-sm">Download Link</th>
-											</tr>
-										</thead>
-									</table>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="panel panel-default">
-						<a data-toggle="collapse" data-parent="#accordion" href="#collapseC">
-						<div class="panel-heading">
-							<h3 class="panel-title">
-								Le Comptoir
-								<span class="arrow-down" style="float: right;"></span>
-							</h3>
-						</div>
-					</a>
-						<div id="collapseC" class="panel-collapse collapse">
-							<div class="panel-body">
-								<div class="table-responsive">
-									<table id="dtYPLeComptoir" class="table table-hover" style="width:100%">
-										<thead>
-											<tr>
-												<th class="th-sm">File</th>
-												<th class="th-sm">Type</th>
-												<th class="th-sm">Download Link</th>
-											</tr>
-										</thead>
-									</table>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				<h1 class="marked">PRODUCTS &amp; VENDORS</h1>
 			</div>
-		</div>
-		<hr>
-		<div class="row">
-			<h1 class="marked">TOP SELLING PRODUCTS</h1>
-			<p>* To maintain accuracy, this product list compiles data from all franchisee networks and is updated weekly.</p>
-			<br>
-			<div class="table-responsive">
-				<table id="top20Sheets" class="table table-hover" style="width:100%">
-					<thead>
-						<tr>
-							<th class="th-sm">Product #</th>
-							<th class="th-sm">Brand</th>
-							<th class="th-sm">Product Name</th>
-							<th class="th-sm">Avg Sales/Month</th>
-						</tr>
-					</thead>
-				</table>
-			</div>
-		</div>
-		<hr>
-		<div class="row">
-			<h1 class="marked">SHORT DATED SALE ITEMS</h1>
-			<p>* This is the list of short dated sale items available from the warehouse at a discounted price.</p>
-			<p>Updated weekly. We have updated our policy to reflect the following changes effective immediately: </p>
-			<p>Item Expiration Discounts: 8 months 15%, 6 months 25%, 3 months 50%, 1 month 75%. </p>
-			<br>
-			<div class="table-responsive">
-				<table id="shortDateSale" class="table table-hover" style="width:100%">
-					<thead>
-						<tr>
-							<th class="th-sm">Product #</th>
-							<th class="th-sm">Brand</th>
-							<th class="th-sm">Product Name</th>
-							<th class="th-sm">Expiration Date</th>
-							<th class="th-sm">Discount %</th>
-						</tr>
-					</thead>
-				</table>
-			</div>
-		</div>
-		<hr>
-		<div class="row">
-			<h1 class="marked">BLOW OUT SALE ITEMS</h1>
-			<p>* Various products available for rapid sale.</p>
-			<br>
-			<div class="table-responsive">
-				<table id="blowOutSale" class="table table-hover" style="width:100%">
-					<thead>
-						<tr>
-							<th class="th-sm">Product #</th>
-							<th class="th-sm">Brand</th>
-							<th class="th-sm">Product Name</th>
-							<th class="th-sm">Expiration Date</th>
-							<th class="th-sm">Discount %</th>
-						</tr>
-					</thead>
-				</table>
-			</div>
-		</div>
-		<hr>
-		<div class="row">
-			<h1 class="marked">ITEMS OUT OF STOCK</h1>
-			<p>* List of items that are currently out of stock at the warehouse. Please see detailed chart below.</p>
-			<p>* To maintain accuracy, this product list is updated weekly.</p>
-			<br>
-			<div class="table-responsive">
-				<table id="dtIaZSheets" class="table table-hover" style="width:100%">
-					<thead>
-						<tr>
-							<th class="th-sm">Product #</th>
-							<th class="th-sm">Brand</th>
-							<th class="th-sm">Product Name</th>
-							<th class="th-sm">Status</th>
-							<th class="th-sm">Availability Time</th>
-							<th class="th-sm">Details</th>
-						</tr>
-					</thead>
-				</table>
-			</div>
-		</div>
-		<hr>
-		<div class="row">
-			<div class="container">
+			<div class="row">
 				<div class="row">
-					<h1 class="marked">ADDITIONAL SUPPORT</h1>
-					<p>Please send all requests to <a href="mailto:support@sangsters.com">support@sangsters.com</a> Your email will be acknowledged and sent to the appropriate recipient. Please place a Keyword containing the focus of your email in the subject line, ie. ACCOUNTING, POS, CO-OP, SUPPORT, MARKETING, SALES, SHIPPING, STOCK. If you require immediate assistance please do not hesitate to contact us via phone at <a href="tel:18776534481,131">+1 (877)-653-4481 ext. 131</a>. Thank you.</p>
+					<div class="panel-group" id="accordion">
+						<div class="panel panel-default">
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapseA">
+								<div class="panel-heading">
+									<h3 class="panel-title">
+										Genuine Health
+										<span class="arrow-down" style="float: right;"></span>
+									</h3>
+								</div>
+							</a>
+							<div id="collapseA" class="panel-collapse collapse">
+								<div class="panel-body">
+									<div class="table-responsive">
+										<table id="dtYPGenuineHealth" class="table table-hover" style="width:100%">
+											<thead>
+												<tr>
+													<th class="th-sm">File</th>
+													<th class="th-sm">Type</th>
+													<th class="th-sm">Download Link</th>
+												</tr>
+											</thead>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapseB">
+								<div class="panel-heading">
+									<h3 class="panel-title">
+										Mineral Medex
+										<span class="arrow-down" style="float: right;"></span>
+									</h3>
+								</div>
+							</a>
+							<div id="collapseB" class="panel-collapse collapse">
+								<div class="panel-body">
+									<div class="table-responsive">
+										<table id="dtYPMineralMedex" class="table table-hover" style="width:100%">
+											<thead>
+												<tr>
+													<th class="th-sm">File</th>
+													<th class="th-sm">Type</th>
+													<th class="th-sm">Download Link</th>
+												</tr>
+											</thead>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapseC">
+								<div class="panel-heading">
+									<h3 class="panel-title">
+										Le Comptoir
+										<span class="arrow-down" style="float: right;"></span>
+									</h3>
+								</div>
+							</a>
+							<div id="collapseC" class="panel-collapse collapse">
+								<div class="panel-body">
+									<div class="table-responsive">
+										<table id="dtYPLeComptoir" class="table table-hover" style="width:100%">
+											<thead>
+												<tr>
+													<th class="th-sm">File</th>
+													<th class="th-sm">Type</th>
+													<th class="th-sm">Download Link</th>
+												</tr>
+											</thead>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<h1 class="marked">TOP SELLING PRODUCTS</h1>
+				<p>* To maintain accuracy, this product list compiles data from all franchisee networks and is updated weekly.</p>
+				<br>
+				<div class="table-responsive">
+					<table id="top20Sheets" class="table table-hover" style="width:100%">
+						<thead>
+							<tr>
+								<th class="th-sm">Product #</th>
+								<th class="th-sm">Brand</th>
+								<th class="th-sm">Product Name</th>
+								<th class="th-sm">Avg Sales/Month</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<h1 class="marked">SHORT DATED SALE ITEMS</h1>
+				<p>* This is the list of short dated sale items available from the warehouse at a discounted price.</p>
+				<p>Updated weekly. We have updated our policy to reflect the following changes effective immediately: </p>
+				<p>Item Expiration Discounts: 8 months 15%, 6 months 25%, 3 months 50%, 1 month 75%. </p>
+				<br>
+				<div class="table-responsive">
+					<table id="shortDateSale" class="table table-hover" style="width:100%">
+						<thead>
+							<tr>
+								<th class="th-sm">Product #</th>
+								<th class="th-sm">Brand</th>
+								<th class="th-sm">Product Name</th>
+								<th class="th-sm">Expiration Date</th>
+								<th class="th-sm">Discount %</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<h1 class="marked">BLOW OUT SALE ITEMS</h1>
+				<p>* Various products available for rapid sale.</p>
+				<br>
+				<div class="table-responsive">
+					<table id="blowOutSale" class="table table-hover" style="width:100%">
+						<thead>
+							<tr>
+								<th class="th-sm">Product #</th>
+								<th class="th-sm">Brand</th>
+								<th class="th-sm">Product Name</th>
+								<th class="th-sm">Expiration Date</th>
+								<th class="th-sm">Discount %</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<h1 class="marked">ITEMS OUT OF STOCK</h1>
+				<p>* List of items that are currently out of stock at the warehouse. Please see detailed chart below.</p>
+				<p>* To maintain accuracy, this product list is updated weekly.</p>
+				<br>
+				<div class="table-responsive">
+					<table id="dtIaZSheets" class="table table-hover" style="width:100%">
+						<thead>
+							<tr>
+								<th class="th-sm">Product #</th>
+								<th class="th-sm">Brand</th>
+								<th class="th-sm">Product Name</th>
+								<th class="th-sm">Status</th>
+								<th class="th-sm">Availability Time</th>
+								<th class="th-sm">Details</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="container">
+					<div class="row">
+						<h1 class="marked">ADDITIONAL SUPPORT</h1>
+						<p>Please send all requests to <a href="mailto:support@sangsters.com">support@sangsters.com</a> Your email will be acknowledged and sent to the appropriate recipient. Please place a Keyword containing the focus of your email in the subject line, ie. ACCOUNTING, POS, CO-OP, SUPPORT, MARKETING, SALES, SHIPPING, STOCK. If you require immediate assistance please do not hesitate to contact us via phone at <a href="tel:18776534481,131">+1 (877)-653-4481 ext. 131</a>. Thank you.</p>
+					</div>
 				</div>
 				<div class="row">
 					<table class="table table-hover">
 						<thead>
 							<tr>
 								<th>Head Office</th>
-								<th>Phone</th>
-								<th>Fax</th>
+								<th>Phone #</th>
+								<th>Fax #</th>
 							</tr>
 						</thead>
 						<tr>
@@ -416,126 +679,126 @@
 			</div>
 		</div>
 		<script type="text/javascript">
-		$(document).ready(function() {
-			$('.table table-hover').DataTable();
-			tablePopulate();
-		});
-
-		// table populate
-		function tablePopulate() {
-			dynamicItemsatZero();
-			top20DT();
-			shortDateSale();
-			blowOutSale();
-
-			// html ID, Google Spreadsheet ID
-			dtFilesDownload("#dtYBOperations", "188Pg2pA0xgRTWhb0EkZp0uotN38PWgL6uG5MgR_INBw");
-			dtFilesDownload("#dtYBsocialmedianBranding", "1B93hCN5Hmo90TOw4oiv0Xe6m5Ek9srzid2NUw5tbJsU");
-			dtFilesDownload("#dtYBsocialmediaFreeUse", "1rh_BzkUaNRBQEP4ai0I3itcMST2XzQprhtLUKI03UhY");
-			dtFilesDownload("#dtYBsocialmediaHappyPoster", "1r3IWGZ9IuUoXwpkYRFbEZxsfxRTPeaXyp5-WNISjwdk");
-			dtFilesDownload("#dtYBEducationCertification", "1KYrwnSudZhidmC7C5s7D-VdiXzvMn2SFvjBxukJdtH8");
-			dtFilesDownload("#dtYBFormsDocuments", "1Ce7XziYZHqYEP_L0vVSkf2GnPofdhTIKKlphCIDzX6c");
-			dtFilesDownload("#dtYBNews", "1P764jsiqX5o0hx6-PRmmgmIDnVGyeU2_rWGBcHiXzvI");
-			dtFilesDownload("#dtYPGenuineHealth", "13X3KEwI-b44D2OPWPSbhXESXI0nzhecvTTPVLatihfQ");
-			dtFilesDownload("#dtYPMineralMedex", "13BLB3KCi9mJt_6bfMC6r8SX81RZgCjmobczOjL_T4Uk");
-			dtFilesDownload("#dtYPLeComptoir", "1WwR3nehN1_mMIcxKhubW8WQpINwCCLN0oHIWUT0FYMc");
-		}
-
-		// https://datatables.net/forums/discussion/5611/how-to-grab-datatables-data-from-a-google-spreadsheet
-		function dynamicItemsatZero() {
-			$('#dtIaZSheets').dataTable({
-				"bServerSide": false,
-				"bProcessing": true,
-				"sAjaxDataProp": "feed.entry",
-				"sAjaxSource": "https://spreadsheets.google.com/feeds/list/1ysewTzEqXZcb4V7nwxejoWtmzJfnZP2G8rNvOiyqPUc/od6/public/values?alt=json",
-				"aoColumns": [
-					{ "mDataProp": "gsx$productnumber.$t" },
-					{ "mDataProp": "gsx$brand.$t" },
-					{ "mDataProp": "gsx$productname.$t" },
-					{ "mDataProp": "gsx$status.$t" },
-					{ "mDataProp": "gsx$availabilitytime.$t" },
-					{ "mDataProp": "gsx$details.$t" }
-				],
-				"pageLength": 20
+			$(document).ready(function() {
+				$('.table table-hover').DataTable();
+				tablePopulate();
 			});
-		}
 
-		function top20DT() {
-			$('#top20Sheets').dataTable({
-				"bServerSide": false,
-				"bProcessing": true,
-				"sAjaxDataProp": "feed.entry",
-				"sAjaxSource": "https://spreadsheets.google.com/feeds/list/1sXXp16j4rRpU9shP7vAJs_xScsGL9_qZsmXF33RmaDs/od6/public/values?alt=json",
-				"aoColumns": [
-					{ "mDataProp": "gsx$productnumber.$t" },
-					{ "mDataProp": "gsx$brand.$t" },
-					{ "mDataProp": "gsx$linktoproductinfo.$t" },
-					{ "mDataProp": "gsx$avgsalespermonth.$t" },
-				],
-				"order": [
-					[3, 'desc']
-				],
-			});
-		}
+			// table populate
+			function tablePopulate() {
+				dynamicItemsatZero();
+				top20DT();
+				shortDateSale();
+				blowOutSale();
 
-		function blowOutSale() {
-			$('#blowOutSale').dataTable({
-				"bServerSide": false,
-				"bProcessing": true,
-				"sAjaxDataProp": "feed.entry",
-				"sAjaxSource": "https://spreadsheets.google.com/feeds/list/12vopCgkUKtDnf93aKh85UjJt35V4LOWagdZsIqtYli8/od6/public/values?alt=json",
-				"aoColumns": [
-					{ "mDataProp": "gsx$productnumber.$t" },
-					{ "mDataProp": "gsx$brand.$t" },
-					{ "mDataProp": "gsx$productname.$t" },
-					{ "mDataProp": "gsx$expirationdate.$t" },
-					{ "mDataProp": "gsx$discountpercentage.$t" },
-				],
-				"order": [
-					[3, 'asc']
-				]
-			});
-		}
+				// html ID, Google Spreadsheet ID
+				dtFilesDownload("#dtYBOperations", "188Pg2pA0xgRTWhb0EkZp0uotN38PWgL6uG5MgR_INBw");
+				dtFilesDownload("#dtYBsocialmedianBranding", "1B93hCN5Hmo90TOw4oiv0Xe6m5Ek9srzid2NUw5tbJsU");
+				dtFilesDownload("#dtYBsocialmediaFreeUse", "1rh_BzkUaNRBQEP4ai0I3itcMST2XzQprhtLUKI03UhY");
+				dtFilesDownload("#dtYBsocialmediaHappyPoster", "1r3IWGZ9IuUoXwpkYRFbEZxsfxRTPeaXyp5-WNISjwdk");
+				dtFilesDownload("#dtYBEducationCertification", "1KYrwnSudZhidmC7C5s7D-VdiXzvMn2SFvjBxukJdtH8");
+				dtFilesDownload("#dtYBFormsDocuments", "1Ce7XziYZHqYEP_L0vVSkf2GnPofdhTIKKlphCIDzX6c");
+				dtFilesDownload("#dtYBNews", "1P764jsiqX5o0hx6-PRmmgmIDnVGyeU2_rWGBcHiXzvI");
+				dtFilesDownload("#dtYPGenuineHealth", "13X3KEwI-b44D2OPWPSbhXESXI0nzhecvTTPVLatihfQ");
+				dtFilesDownload("#dtYPMineralMedex", "13BLB3KCi9mJt_6bfMC6r8SX81RZgCjmobczOjL_T4Uk");
+				dtFilesDownload("#dtYPLeComptoir", "1WwR3nehN1_mMIcxKhubW8WQpINwCCLN0oHIWUT0FYMc");
+			}
 
-		function shortDateSale() {
-			$('#shortDateSale').dataTable({
-				"bServerSide": false,
-				"bProcessing": true,
-				"sAjaxDataProp": "feed.entry",
-				"sAjaxSource": "https://spreadsheets.google.com/feeds/list/1eDrdinECqPyTyVSakeZOUPcBrXp99ily7qBSahJ398o/od6/public/values?alt=json",
-				"aoColumns": [
-					{ "mDataProp": "gsx$productnumber.$t" },
-					{ "mDataProp": "gsx$brand.$t" },
-					{ "mDataProp": "gsx$productname.$t" },
-					{ "mDataProp": "gsx$expirationdate.$t" },
-					{ "mDataProp": "gsx$discountpercentage.$t" },
-				],
-				"order": [
-					[3, 'asc']
-				]
-			});
-		}
+			// https://datatables.net/forums/discussion/5611/how-to-grab-datatables-data-from-a-google-spreadsheet
+			function dynamicItemsatZero() {
+				$('#dtIaZSheets').dataTable({
+					"bServerSide": false,
+					"bProcessing": true,
+					"sAjaxDataProp": "feed.entry",
+					"sAjaxSource": "https://spreadsheets.google.com/feeds/list/1ysewTzEqXZcb4V7nwxejoWtmzJfnZP2G8rNvOiyqPUc/od6/public/values?alt=json",
+					"aoColumns": [
+						{ "mDataProp": "gsx$productnumber.$t" },
+						{ "mDataProp": "gsx$brand.$t" },
+						{ "mDataProp": "gsx$productname.$t" },
+						{ "mDataProp": "gsx$status.$t" },
+						{ "mDataProp": "gsx$availabilitytime.$t" },
+						{ "mDataProp": "gsx$details.$t" }
+					],
+					"pageLength": 20
+				});
+			}
 
-		function dtFilesDownload(className, url) {
-			$(className).dataTable({
-				"bServerSide": false,
-				"bProcessing": true,
-				"sAjaxDataProp": "feed.entry",
-				"sAjaxSource": "https://spreadsheets.google.com/feeds/list/" + url + "/od6/public/values?alt=json",
-				"aoColumns": [
-					{ "mDataProp": "gsx$filename.$t" },
-					{ "mDataProp": "gsx$docutype.$t" },
-					{ "mDataProp": "gsx$downloadlink.$t" },
-				],
-			});
-		}
+			function top20DT() {
+				$('#top20Sheets').dataTable({
+					"bServerSide": false,
+					"bProcessing": true,
+					"sAjaxDataProp": "feed.entry",
+					"sAjaxSource": "https://spreadsheets.google.com/feeds/list/1sXXp16j4rRpU9shP7vAJs_xScsGL9_qZsmXF33RmaDs/od6/public/values?alt=json",
+					"aoColumns": [
+						{ "mDataProp": "gsx$productnumber.$t" },
+						{ "mDataProp": "gsx$brand.$t" },
+						{ "mDataProp": "gsx$linktoproductinfo.$t" },
+						{ "mDataProp": "gsx$avgsalespermonth.$t" },
+					],
+					"order": [
+						[3, 'desc']
+					],
+				});
+			}
 
-		$(".jumbotron").css({ height: $(window).height() / 3 + "px" });
+			function blowOutSale() {
+				$('#blowOutSale').dataTable({
+					"bServerSide": false,
+					"bProcessing": true,
+					"sAjaxDataProp": "feed.entry",
+					"sAjaxSource": "https://spreadsheets.google.com/feeds/list/12vopCgkUKtDnf93aKh85UjJt35V4LOWagdZsIqtYli8/od6/public/values?alt=json",
+					"aoColumns": [
+						{ "mDataProp": "gsx$productnumber.$t" },
+						{ "mDataProp": "gsx$brand.$t" },
+						{ "mDataProp": "gsx$productname.$t" },
+						{ "mDataProp": "gsx$expirationdate.$t" },
+						{ "mDataProp": "gsx$discountpercentage.$t" },
+					],
+					"order": [
+						[3, 'asc']
+					]
+				});
+			}
 
-		$(window).on("resize", function() {
+			function shortDateSale() {
+				$('#shortDateSale').dataTable({
+					"bServerSide": false,
+					"bProcessing": true,
+					"sAjaxDataProp": "feed.entry",
+					"sAjaxSource": "https://spreadsheets.google.com/feeds/list/1eDrdinECqPyTyVSakeZOUPcBrXp99ily7qBSahJ398o/od6/public/values?alt=json",
+					"aoColumns": [
+						{ "mDataProp": "gsx$productnumber.$t" },
+						{ "mDataProp": "gsx$brand.$t" },
+						{ "mDataProp": "gsx$productname.$t" },
+						{ "mDataProp": "gsx$expirationdate.$t" },
+						{ "mDataProp": "gsx$discountpercentage.$t" },
+					],
+					"order": [
+						[3, 'asc']
+					]
+				});
+			}
+
+			function dtFilesDownload(className, url) {
+				$(className).dataTable({
+					"bServerSide": false,
+					"bProcessing": true,
+					"sAjaxDataProp": "feed.entry",
+					"sAjaxSource": "https://spreadsheets.google.com/feeds/list/" + url + "/od6/public/values?alt=json",
+					"aoColumns": [
+						{ "mDataProp": "gsx$filename.$t" },
+						{ "mDataProp": "gsx$docutype.$t" },
+						{ "mDataProp": "gsx$downloadlink.$t" },
+					],
+				});
+			}
+
 			$(".jumbotron").css({ height: $(window).height() / 3 + "px" });
-		});
+
+			$(window).on("resize", function() {
+				$(".jumbotron").css({ height: $(window).height() / 3 + "px" });
+			});
 		</script>
-</body>
+	</body>
 
 </html>
