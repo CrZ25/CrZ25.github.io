@@ -12,16 +12,209 @@
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 	<link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/1902/7765/t/3/assets/favicon.png" />
-	<link rel="stylesheet" type="text/css" href="css/table.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/table.css"> -->
+	<style type="text/css">
+	.jumbotron {
+		color: white;
+		background-image: url("../img/EastWest Bioscience/banner.png");
+		background-position: center;
+		background-color: #fff;
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 365px;
+	}
+
+	.footerimg {
+		background-image: url("../img/EastWest Bioscience/footer.png");
+		margin: 0;
+	}
+
+	mark {
+		/*background-color: rgb(126, 170, 58);*/
+		color: #000;
+		font-weight: 800;
+	}
+
+	hr {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+		border: 2px solid rgb(126, 170, 58);
+		border-radius: 2px;
+	}
+
+	table.dataTable thead tr {
+		background-color: rgb(126, 170, 58);
+		border-radius: 2px;
+		color: #fff;
+	}
+
+	.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+	.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+		color: white !important;
+		border: 0;
+		border-radius: 4px;
+		background: rgb(126, 170, 58);
+	}
+
+	.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+		color: black !important;
+		border: 1px solid white;
+		border-radius: 4px;
+
+		background: rgb(126, 170, 58);
+	}
+
+	.dataTables_wrapper .dataTables_filter input {
+		border-radius: 7px;
+		border: 2px solid rgb(126, 170, 58);
+	}
+
+	.dataTables_wrapper .dataTables_filter input:hover {
+		background-color: rgba(126, 170, 58, .2);
+		transition: .2s all ease;
+	}
+
+	.table-hover tbody tr:hover td,
+	.table-hover tbody tr:hover th {
+		background-color: rgba(126, 170, 58, .4);
+		transition: .2s all ease;
+	}
+
+	.panel-default {
+		text-align: center;
+		margin: auto;
+		width: 80%;
+	}
+
+	.panel-default-NP {
+		width: 100%;
+		text-align: center;
+		margin: auto;
+	}
+
+	.panel-heading {
+		background-color: rgb(126, 170, 58);
+	}
+
+	.panel-title {
+		color: #fff;
+	}
+
+	.arrow-down {
+		width: 0;
+		height: 6px;
+		border-left: 6px solid transparent;
+		border-right: 6px solid transparent;
+
+		border-top: 10px solid #fff;
+	}
+
+	.card {
+		width: 80%;
+		margin: auto;
+		flex: 1 1 auto;
+		border: 2px rgb(126, 170, 58) solid;
+		border-radius: 7px;
+		margin-bottom: .2em;
+	}
+
+	.card-body {
+		margin: 1em;
+	}
+
+	.card-header {
+		text-decoration: none;
+		background-color: rgb(126, 170, 58);
+		padding: 0.75rem 1.25rem;
+		margin-bottom: 0;
+	}
+
+	.mb-0>a {
+		color: white;
+		display: block;
+		position: relative;
+	}
+
+	.mb-0>a:after {
+		content: "\f078";
+		/* fa-chevron-down */
+		font-family: 'FontAwesome';
+		position: absolute;
+		right: 0;
+	}
+
+	.mb-0>a[aria-expanded="true"]:after {
+		content: "\f077";
+		/* fa-chevron-up */
+	}
+
+	input {
+		color: black;
+	}
+
+	
+/* Reset Select */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #2c3e50;
+  background-image: none;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select */
+.select {
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  line-height: 3;
+  background: #2c3e50;
+  overflow: hidden;
+  border-radius: .25em;
+}
+select {
+  flex: 1;
+  padding: 0 .5em;
+  color: #fff;
+  cursor: pointer;
+}
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #34495e;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+}
+/* Transition */
+.select:hover::after {
+  color: #f39c12;
+}
+
+	</style>
 </head>
 
 <body>
-	<div class="container-fluid">
+	<!-- 	<div class="container-fluid">
 		<div class="row">
 			<div class="jumbotron jumbotron-fluid">
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<div class="container">
 		<div class="row">
 			<h1 class="display-4 marked" style="line-height: 1.6em;">WELCOME TO THE SANGSTER'S SUPPORT HUB!</h1>
@@ -559,16 +752,32 @@
 			<hr />
 		</div>
 	</div>
-	<div class="container-fluid">
+	<!-- 	<div class="container-fluid">
 		<div class="row">
 			<div class="jumbotron jumbotron-fluid footerimg">
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<script type="text/javascript">
 	$(document).ready(function() {
 		$('.table table-hover').DataTable();
 		tablePopulate();
+		$('input[type="search"]').each(function() {
+				$.data(this, 'default', this.value);
+			}).css("color", "blue")
+			.focus(function() {
+				if (!$.data(this, 'edited')) {
+					this.value = "";
+					$(this).css("color", "black");
+				}
+			}).change(function() {
+				$.data(this, 'edited', this.value != "");
+			}).blur(function() {
+				if (!$.data(this, 'edited')) {
+					this.value = $.data(this, 'default');
+					$(this).css("color", "red");
+				}
+			});
 	});
 
 	// table populate
@@ -579,13 +788,7 @@
 		blowOutSale();
 
 		// html ID, Google Spreadsheet ID
-		dtFilesDownload("#dtYBOperations", "188Pg2pA0xgRTWhb0EkZp0uotN38PWgL6uG5MgR_INBw");
-		dtFilesDownload("#dtYBsocialmedianBranding", "1B93hCN5Hmo90TOw4oiv0Xe6m5Ek9srzid2NUw5tbJsU");
-		dtFilesDownload("#dtYBsocialmediaFreeUse", "1rh_BzkUaNRBQEP4ai0I3itcMST2XzQprhtLUKI03UhY");
-		dtFilesDownload("#dtYBsocialmediaHappyPoster", "1r3IWGZ9IuUoXwpkYRFbEZxsfxRTPeaXyp5-WNISjwdk");
-		dtFilesDownload("#dtYBEducationCertification", "1KYrwnSudZhidmC7C5s7D-VdiXzvMn2SFvjBxukJdtH8");
-		dtFilesDownload("#dtYBNews", "1P764jsiqX5o0hx6-PRmmgmIDnVGyeU2_rWGBcHiXzvI");
-
+		dtFilesDownload("#dtYBOperations", "188Pg2pA0xgRTWhb0EkZp0uotN38PWgL6uG5MgR_INBw")
 		dtFilesDownload("#dtNewEmployeeForms", "1PCIoDmkrNAUEyMjsNNb_iNosHvjBHgKHKhoqusgP768");
 		dtFilesDownload("#dtCoopForms", "1etMEhsr5DWBTJ9xOXSlV7tL-kjk86-bitkkk6tiOz6A");
 		dtFilesDownload("#dtBusinessEssentials", "1UAF1EHz1EpLlkwXml-3nxhKqgqM6ryuUSM82PNmn2yk");
@@ -600,9 +803,9 @@
 		dtFilesDownload("#dtEducationCertification", "1KYrwnSudZhidmC7C5s7D-VdiXzvMn2SFvjBxukJdtH8");
 
 		dtFilesDownload("#dtGH", "13X3KEwI-b44D2OPWPSbhXESXI0nzhecvTTPVLatihfQ");
-		dtFilesDownload("#dtMM", "13BLB3KCi9mJt_6bfMC6r8SX81RZgCjmobczOjL_T4Uk");
+		dtFilesDownload("#dtMM", "1mf80x69_utud3Xh4mipQJdUbF5wrJo4D8DelaCLBH3A");
 		dtFilesDownload("#dtLC", "1WwR3nehN1_mMIcxKhubW8WQpINwCCLN0oHIWUT0FYMc");
-		dtFilesDownload("#dtProductCatalogue", "1mt0IHhfUHjVxVCqnzpdj3SX_WKCBOJRYqP3ImcmEG58")
+		dtFilesDownload("#dtProductCatalogue", "1fz8v3alaRe-QOlIAKqUIheyovHHkC06aGocCYBK739s")
 	}
 
 	// https://datatables.net/forums/discussion/5611/how-to-grab-datatables-data-from-a-google-spreadsheet
