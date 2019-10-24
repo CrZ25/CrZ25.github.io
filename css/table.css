@@ -99,6 +99,7 @@ table.dataTable thead tr {
 	flex: 1 1 auto;
 	border: 2px rgb(126, 170, 58) solid;
 	border-radius: 7px;
+	margin-bottom: .2em;
 }
 .card-body {
 	margin: 1em;
@@ -108,7 +109,6 @@ table.dataTable thead tr {
 	background-color: rgb(126, 170, 58);
 	padding: 0.75rem 1.25rem;
 	margin-bottom: 0;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 
 .mb-0>a {
